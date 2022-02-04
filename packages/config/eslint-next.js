@@ -48,7 +48,7 @@ module.exports = {
       rules: {
         'import/no-extraneous-dependencies': [
           'off',
-          { devDependencies: ['**/?(*.)+(spec|test).[jt]s?(x)'] },
+          {devDependencies: ['**/?(*.)+(spec|test).[jt]s?(x)']},
         ],
       },
     },
@@ -63,5 +63,6 @@ module.exports = {
     'coverage',
     'dist',
     '.turbo',
+    'next-env.d.ts',
   ],
 }
