@@ -1,6 +1,6 @@
 import { getAccessToken, withApiAuthRequired } from '@auth0/nextjs-auth0'
-import { http } from 'core/http'
 import { CompaniesService } from 'companies'
+import { http } from 'core/http'
 import { NextApiRequest, NextApiResponse } from 'next'
 
 const companies = async (

@@ -10,7 +10,7 @@ module.exports = {
     'plugin:import/typescript',
     'prettier',
   ],
-  plugins: ['@typescript-eslint', 'import'],
+  plugins: ['@typescript-eslint', 'import', 'simple-import-sort'],
   settings: {
     next: {
       rootDir: ['apps/*/', 'packages/*/'],
@@ -36,6 +36,25 @@ module.exports = {
 
     // next
     '@next/next/no-html-link-for-pages': 'off',
+    'sort-imports': [
+      'error',
+      { ignoreCase: true, ignoreDeclarationSort: true },
+    ],
+    'import/order': [
+      1,
+      {
+        groups: [
+          'external',
+          'builtin',
+          'internal',
+          'sibling',
+          'parent',
+          'index',
+        ],
+      },
+    ],
+    'simple-import-sort/imports': 'error',
+    'simple-import-sort/exports': 'error',
   },
   overrides: [
     {
@@ -48,7 +67,7 @@ module.exports = {
       rules: {
         'import/no-extraneous-dependencies': [
           'off',
-          {devDependencies: ['**/?(*.)+(spec|test).[jt]s?(x)']},
+          { devDependencies: ['**/?(*.)+(spec|test).[jt]s?(x)'] },
         ],
       },
     },
