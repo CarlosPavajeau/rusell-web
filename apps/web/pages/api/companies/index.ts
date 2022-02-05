@@ -14,7 +14,7 @@ const companies = async (
     return req
   })
 
-  await CompaniesService.saveCompany(request.body)
+  await CompaniesService.save(request.body)
 
   response.status(200)
 }

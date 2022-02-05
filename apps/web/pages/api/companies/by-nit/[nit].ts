@@ -15,7 +15,7 @@ const companies = async (
   })
 
   const { nit } = request.query
-  const companies = await CompaniesService.fetchCompanyByNit(nit as string)
+  const companies = await CompaniesService.fetchByNit(nit as string)
 
   response.status(200).json(companies)
 }

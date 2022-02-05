@@ -15,7 +15,7 @@ const companies = async (
   })
 
   const { userId } = request.query
-  const company = await CompaniesService.fetchCompanyByUser(userId as string)
+  const company = await CompaniesService.fetchByUser(userId as string)
 
   response.status(200).json(company)
 }
