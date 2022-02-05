@@ -14,4 +14,8 @@ export const CompaniesService = {
     const { data } = await http.get<Company>(`/companies/by-nit/${nit}`)
     return data
   },
+  fetchCompanyByUser: async (userId: string) => {
+    const { data } = await http.get<Company>(`/companies/by-user/${userId}`)
+    return data
+  },
 }
