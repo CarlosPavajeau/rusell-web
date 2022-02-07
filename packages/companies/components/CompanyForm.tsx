@@ -37,7 +37,12 @@ export const CompanyForm = (props: Props) => {
           {...register('info', { required: true })}
         />
 
-        <Button type="submit" variant="contained" color="primary">
+        <Button
+          type="submit"
+          variant="contained"
+          color="primary"
+          sx={{ width: 'fit-content' }}
+        >
           Register company
         </Button>
       </Stack>
