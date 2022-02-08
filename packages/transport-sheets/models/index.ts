@@ -2,6 +2,7 @@ export type CreateTransportSheetRequest = {
   quota: number
   vehicleLicensePlate: string
   dispatcherId: string
+  routeId: string
 }
 
 export type TransportSheet = {
@@ -9,6 +10,7 @@ export type TransportSheet = {
   departureTime?: Date
   quota: number
   vehicleLicensePlate: string
+  routeId: string
   dispatcherName: string
 }
 
