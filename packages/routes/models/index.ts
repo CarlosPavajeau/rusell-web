@@ -7,6 +7,7 @@ export type CreateRouteRequest = {
 }
 
 export type Route = {
+  id: string
   from: string
   to: string
   cost: number
