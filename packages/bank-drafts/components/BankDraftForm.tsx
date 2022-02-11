@@ -1,10 +1,10 @@
 import Button from '@mui/material/Button'
 import FormControl from '@mui/material/FormControl'
 import InputLabel from '@mui/material/InputLabel'
-import MenuItem from '@mui/material/MenuItem'
 import Select from '@mui/material/Select'
 import Stack from '@mui/material/Stack'
 import TextField from '@mui/material/TextField'
+import ClientSelectOption from 'clients/components/ClientSelectOption'
 import { Clients } from 'clients/models'
 import { useForm } from 'react-hook-form'
 
@@ -45,9 +45,7 @@ const BankDraftForm = (props: Props) => {
             {clients
               .filter(client => client.id !== watch('receiverId'))
               .map(client => (
-                <MenuItem key={client.id} value={client.id}>
-                  {client.id} {client.fullName}
-                </MenuItem>
+                <ClientSelectOption client={client} key={client.id} />
               ))}
           </Select>
         </FormControl>
@@ -65,9 +63,7 @@ const BankDraftForm = (props: Props) => {
             {clients
               .filter(client => client.id !== watch('senderId'))
               .map(client => (
-                <MenuItem key={client.id} value={client.id}>
-                  {client.id}, {client.fullName}
-                </MenuItem>
+                <ClientSelectOption client={client} key={client.id} />
               ))}
           </Select>
         </FormControl>
