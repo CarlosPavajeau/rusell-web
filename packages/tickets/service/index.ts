@@ -10,11 +10,13 @@ export const TicketsService = {
     )
   },
   fetchAllByTransportSheet: async (transportSheetId: string) => {
-    return await http.get<Tickets>(
+    const { data } = await http.get<Tickets>(
       `/tickets/transport-sheets/${transportSheetId}/tickets`,
     )
+    return data
   },
   fetchAllByClient: async (clientId: string) => {
-    return await http.get<Tickets>(`/tickets/by-client/${clientId}`)
+    const { data } = await http.get<Tickets>(`/tickets/by-client/${clientId}`)
+    return data
   },
 }
