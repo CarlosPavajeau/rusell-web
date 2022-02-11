@@ -10,13 +10,15 @@ export const EmployeeService = {
     )
   },
   fetchAll: async (companyId: string) => {
-    return await http.get<Employees>(
+    const { data } = await http.get<Employees>(
       `/employees/companies/${companyId}/employees`,
     )
+    return data
   },
   fetchAllByType: async (companyId: string, type: EmployeeType) => {
-    return await http.get<Employees>(
+    const { data } = await http.get<Employees>(
       `/employees/companies/${companyId}/employees/by-type/${type}`,
     )
+    return data
   },
 }
