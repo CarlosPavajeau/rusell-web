@@ -1,17 +1,28 @@
 import '../styles/fonts.css'
 
 import { UserProvider } from '@auth0/nextjs-auth0'
-import { Container } from '@mui/material'
+import { NextComponentType, NextPage } from 'next'
 import type { AppProps } from 'next/app'
+import DefaultLayout from 'ui/layouts/DefaultLayout'
 import ThemeConfig from 'ui/theme/ThemeConfig'
 
-const App = ({ Component, pageProps }: AppProps) => {
+type NextPageWithLayout = NextPage & {
+  Layout?: NextComponentType
+}
+
+type AppPropsWithLayout = AppProps & {
+  Component: NextPageWithLayout
+}
+
+const App = ({ Component, pageProps }: AppPropsWithLayout) => {
+  const Layout = Component.Layout || DefaultLayout
+
   return (
     <UserProvider>
       <ThemeConfig>
-        <Container maxWidth="sm">
+        <Layout>
           <Component {...pageProps} />
-        </Container>
+        </Layout>
       </ThemeConfig>
     </UserProvider>
   )
