@@ -17,7 +17,7 @@ const handler = async (request: NextApiRequest, response: NextApiResponse) => {
     city: request.query['to.city'] as string,
   }
 
-  const routes = await RoutesService.fetchByFromTo(from, to)
+  const routes = await RoutesService.fetchAllByFromTo(from, to)
 
   response.status(200).json(routes)
 }

@@ -14,7 +14,9 @@ const handler = async (request: NextApiRequest, response: NextApiResponse) => {
   }
 
   if (request.method === 'GET') {
-    const employees = await EmployeeService.fetchAll(companyId as string)
+    const employees = await EmployeeService.fetchAllByCompany(
+      companyId as string,
+    )
 
     response.status(200).json(employees)
   }

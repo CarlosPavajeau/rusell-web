@@ -6,7 +6,7 @@ import withBearerToken from 'utils/auth0/withBearerToken'
 
 const handler = async (request: NextApiRequest, response: NextApiResponse) => {
   const { companyId, type } = request.query
-  const employees = await EmployeeService.fetchAllByType(
+  const employees = await EmployeeService.fetchAllByCompanyAndType(
     companyId as string,
     EmployeeType[type as string],
   )

@@ -6,7 +6,7 @@ export const CompaniesService = {
   save: async (company: CreateCompanyRequest) => {
     await http.post('/companies', company)
   },
-  fetch: async (id: string) => {
+  fetchById: async (id: string) => {
     const { data } = await http.get<Company>(`/companies/${id}`)
     return data
   },

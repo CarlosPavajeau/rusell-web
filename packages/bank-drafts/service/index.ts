@@ -9,13 +9,13 @@ export const BankDraftsService = {
       bankDraft,
     )
   },
-  fetchBySender: async (senderId: string) => {
+  fetchAllBySender: async (senderId: string) => {
     const { data } = await http.get<BankDrafts>(
       `/bank-drafts/by-sender/${senderId}`,
     )
     return data
   },
-  fetchByReceiver: async (receiverId: string, state?: BankDraftState) => {
+  fetchAllByReceiver: async (receiverId: string, state?: BankDraftState) => {
     const { data } = await http.get<BankDrafts>(
       `/bank-drafts/by-receiver/${receiverId}${state ? `?state=${state}` : ''}`,
     )

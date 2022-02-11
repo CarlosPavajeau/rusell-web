@@ -7,7 +7,7 @@ import withBearerToken from 'utils/auth0/withBearerToken'
 const handler = async (request: NextApiRequest, response: NextApiResponse) => {
   const { receiverId, state } = request.query
 
-  const parcels = await ParcelsService.fetchByReceiver(
+  const parcels = await ParcelsService.fetchAllByReceiver(
     receiverId as string,
     state !== undefined ? ParcelState[state as string] : undefined,
   )

@@ -14,7 +14,7 @@ const handler = async (request: NextApiRequest, response: NextApiResponse) => {
   }
 
   if (request.method === 'GET') {
-    const routes = await RoutesService.fetchByCompany(companyId as string)
+    const routes = await RoutesService.fetchAllByCompany(companyId as string)
 
     response.status(200).json(routes)
   }

@@ -6,7 +6,7 @@ export const ClientsService = {
   save: async (client: CreateClientRequest) => {
     return await http.post('/clients', client)
   },
-  fetch: async (clientId: string) => {
+  fetchById: async (clientId: string) => {
     const { data } = await http.get<Client>(`/clients/${clientId}`)
     return data
   },

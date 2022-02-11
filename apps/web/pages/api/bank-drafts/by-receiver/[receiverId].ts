@@ -7,7 +7,7 @@ import withBearerToken from 'utils/auth0/withBearerToken'
 const handler = async (request: NextApiRequest, response: NextApiResponse) => {
   const { receiverId, state } = request.query
 
-  const bankDrafts = await BankDraftsService.fetchByReceiver(
+  const bankDrafts = await BankDraftsService.fetchAllByReceiver(
     receiverId as string,
     state !== undefined ? BankDraftState[state as string] : undefined,
   )
