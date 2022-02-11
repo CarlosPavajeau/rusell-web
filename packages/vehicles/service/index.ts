@@ -12,14 +12,17 @@ export const VehiclesService = {
   },
   saveLegalInformation: async (
     legalInformation: CreateVehicleLegalInformationRequest,
-    licencePlate: string,
+    licensePlate: string,
   ) => {
     return await http.post(
-      `/vehicles/${licencePlate}/legal-information`,
+      `/vehicles/${licensePlate}/legal-information`,
       legalInformation,
     )
   },
   fetchAllByCompany: async (companyId: string) => {
-    return await http.get<Vehicles>(`/vehicles/companies/${companyId}/vehicles`)
+    const { data } = await http.get<Vehicles>(
+      `/vehicles/companies/${companyId}/vehicles`,
+    )
+    return data
   },
 }
