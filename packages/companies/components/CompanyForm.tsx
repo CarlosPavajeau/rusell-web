@@ -11,7 +11,7 @@ export const CompanyForm = (props: Props) => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm<CreateCompanyRequest>({
     defaultValues: {
       nit: undefined,
@@ -41,6 +41,7 @@ export const CompanyForm = (props: Props) => {
           type="submit"
           variant="contained"
           color="primary"
+          disabled={isSubmitting}
           sx={{ width: 'fit-content' }}
         >
           Register company
