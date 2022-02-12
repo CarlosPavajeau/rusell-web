@@ -3,10 +3,14 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "predev": "npm run i18n:compile",
     "dev": "next dev",
+    "prebuild": "npm run i18n:compile",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "i18n:extract": "formatjs extract 'pages/**/*.ts*' 'components/**/*.ts*' --out-file lang/en.json",
+    "i18n:compile": "formatjs compile-folder lang compiled-lang"
   },
   "dependencies": {
     "@auth0/nextjs-auth0": "^1.7.0",
@@ -17,12 +21,15 @@
     "next": "12.0.8",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-intl": "^5.24.6",
     "swr": "^1.2.1",
     "ui": "*"
   },
   "devDependencies": {
+    "@formatjs/cli": "^4.8.2",
     "@types/node": "^17.0.12",
     "@types/react": "17.0.37",
+    "babel-plugin-formatjs": "^10.3.18",
     "config": "*",
     "eslint": "7.32.0",
     "next-transpile-modules": "9.0.0",

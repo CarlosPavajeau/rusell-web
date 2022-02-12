@@ -17,6 +17,7 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-config-standard": "^16.0.3",
     "eslint-import-resolver-typescript": "^2.5.0",
+    "eslint-plugin-formatjs": "^3.0.0",
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-jest": "^26.0.0",
     "eslint-plugin-node": "^11.1.0",

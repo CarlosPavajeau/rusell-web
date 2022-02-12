@@ -16,6 +16,7 @@ build
 # misc
 .DS_Store
 *.pem
+lang/.messages/
 
 # debug
 npm-debug.log*
@@ -34,3 +35,7 @@ yarn-error.log*
 
 # IDE
 .idea
+
+# vercel
+.vercel
+compiled-lang

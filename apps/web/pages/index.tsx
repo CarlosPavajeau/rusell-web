@@ -2,8 +2,10 @@ import { useUser, withPageAuthRequired } from '@auth0/nextjs-auth0'
 import { Box, Button, Link, Typography } from '@mui/material'
 import Head from 'next/head'
 import { useContext } from 'react'
+import { FormattedMessage } from 'react-intl'
 import DashboardLayout from 'ui/layouts/DashboardLayout'
 import ThemeContext from 'ui/theme/ThemeContext'
+import loadI18nMessages from 'utils/i18n/loadIntlMessages'
 
 const Web = () => {
   const { user, error, isLoading } = useUser()
@@ -42,7 +44,10 @@ const Web = () => {
                 color="error"
                 sx={{ textDecoration: 'none' }}
               >
-                Logout
+                <FormattedMessage
+                  defaultMessage="Logout"
+                  description="Index: Logout"
+                />
               </Link>
             </Button>
           )}
@@ -63,6 +68,18 @@ const Web = () => {
 }
 
 Web.Layout = DashboardLayout
-export const getServerSideProps = withPageAuthRequired()
+
+export const getServerSideProps = withPageAuthRequired({
+  getServerSideProps: async context => {
+    return {
+      props: {
+        intlMessages: await loadI18nMessages({
+          locale: context.locale,
+          defaultLocale: context.defaultLocale,
+        }),
+      },
+    }
+  },
+})
 
 export default Web
