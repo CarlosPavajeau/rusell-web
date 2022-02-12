@@ -63,5 +63,6 @@ const Web = () => {
 }
 
 Web.Layout = DashboardLayout
+export const getServerSideProps = withPageAuthRequired()
 
-export default withPageAuthRequired(Web)
+export default Web
