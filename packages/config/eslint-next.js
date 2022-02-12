@@ -10,7 +10,7 @@ module.exports = {
     'plugin:import/typescript',
     'prettier',
   ],
-  plugins: ['@typescript-eslint', 'import', 'simple-import-sort'],
+  plugins: ['@typescript-eslint', 'import', 'simple-import-sort', 'formatjs'],
   settings: {
     next: {
       rootDir: ['apps/*/', 'packages/*/'],
