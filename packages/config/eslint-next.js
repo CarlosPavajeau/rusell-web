@@ -55,6 +55,7 @@ module.exports = {
     ],
     'simple-import-sort/imports': 'error',
     'simple-import-sort/exports': 'error',
+    'formatjs/enforce-default-message': ['error', 'literal'],
   },
   overrides: [
     {
