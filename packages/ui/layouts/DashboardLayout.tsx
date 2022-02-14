@@ -36,7 +36,7 @@ const DashboardLayout = (props: Props) => {
 
   return (
     <RootStyle>
-      <DashboardNavbar />
+      <DashboardNavbar onOpenSidebar={() => setMobileOpen(true)} />
       <DashboardSidebar
         isOpen={mobileOpen}
         onClose={() => setMobileOpen(false)}
