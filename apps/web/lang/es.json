@@ -104,7 +104,7 @@
     "description": "Phone number field"
   },
   "Jqius8": {
-    "defaultMessage": "Street name",
+    "defaultMessage": "Vía",
     "description": "Street name field"
   },
   "Jy3VAc": {
@@ -188,7 +188,7 @@
     "description": "Mark field"
   },
   "UXwuhT": {
-    "defaultMessage": "Please enter an intersection",
+    "defaultMessage": "Por favor, ingrese un número",
     "description": "Error message for intersection field"
   },
   "VaBpQ8": {
@@ -320,11 +320,11 @@
     "description": "Error message for license plate field"
   },
   "lz2h6L": {
-    "defaultMessage": "Intersection",
+    "defaultMessage": "Número",
     "description": "Intersection field"
   },
   "m2NKvt": {
-    "defaultMessage": "Please enter a street name",
+    "defaultMessage": "Por favor, ingrese una vía",
     "description": "Error message for street name field"
   },
   "nNwQ03": {
