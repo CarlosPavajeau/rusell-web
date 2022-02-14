@@ -1,5 +1,8 @@
-import { Button, Stack, TextField } from '@mui/material'
+import Button from '@mui/material/Button'
+import Stack from '@mui/material/Stack'
+import TextField from '@mui/material/TextField'
 import { useForm } from 'react-hook-form'
+import { FormattedMessage, useIntl } from 'react-intl'
 
 import { CreateClientRequest } from '../models'
 
@@ -9,6 +12,7 @@ type Props = {
 
 const ClientForm = (props: Props) => {
   const { onSubmit } = props
+  const intl = useIntl()
   const {
     register,
     handleSubmit,
@@ -19,51 +23,102 @@ const ClientForm = (props: Props) => {
     <form onSubmit={handleSubmit(onSubmit)}>
       <Stack spacing={3}>
         <TextField
-          label="Id"
-          helperText={errors.id?.type === 'required' && 'Id is required'}
-          error={!!errors.id}
-          {...register('id', { required: true })}
-        />
-
-        <TextField
-          label="First name"
-          helperText={
-            errors.firstName?.type === 'required' && 'First name is required'
+          label={
+            <FormattedMessage defaultMessage="Id" description="Id field" />
           }
-          error={!!errors.firstName}
-          {...register('firstName', { required: true })}
+          helperText={errors?.id?.message}
+          error={!!errors.id}
+          {...register('id', {
+            required: {
+              value: true,
+              message: intl.formatMessage({
+                defaultMessage: 'Please enter an id',
+                description: 'Error message for id field',
+              }),
+            },
+          })}
         />
 
         <TextField
-          label="Middle name"
+          label={
+            <FormattedMessage
+              defaultMessage="First name"
+              description="First name field"
+            />
+          }
+          helperText={errors?.firstName?.message}
+          error={!!errors.firstName}
+          {...register('firstName', {
+            required: {
+              value: true,
+              message: intl.formatMessage({
+                defaultMessage: 'Please enter a first name',
+                description: 'Error message for first name field',
+              }),
+            },
+          })}
+        />
+
+        <TextField
+          label={
+            <FormattedMessage
+              defaultMessage="Middle name"
+              description="Middle name field"
+            />
+          }
           error={!!errors.middleName}
           {...register('middleName')}
         />
 
         <TextField
-          label="First surname"
-          helperText={
-            errors.firstSurname?.type === 'required' &&
-            'First surname is required'
+          label={
+            <FormattedMessage
+              defaultMessage="First surname"
+              description="First surname field"
+            />
           }
+          helperText={errors?.firstSurname?.message}
           error={!!errors.firstSurname}
-          {...register('firstSurname', { required: true })}
+          {...register('firstSurname', {
+            required: {
+              value: true,
+              message: intl.formatMessage({
+                defaultMessage: 'Please enter a first surname',
+                description: 'Error message for first surname field',
+              }),
+            },
+          })}
         />
 
         <TextField
-          label="Second surname"
+          label={
+            <FormattedMessage
+              defaultMessage="Second surname"
+              description="Second surname field"
+            />
+          }
           error={!!errors.secondSurname}
           {...register('secondSurname')}
         />
 
         <TextField
-          label="Phone number"
-          helperText={
-            errors.phoneNumber?.type === 'required' &&
-            'Phone number is required'
+          label={
+            <FormattedMessage
+              defaultMessage="Phone number"
+              description="Phone number field"
+            />
           }
+          helperText={errors?.phoneNumber?.message}
           error={!!errors.phoneNumber}
-          {...register('phoneNumber', { required: true })}
+          {...register('phoneNumber', {
+            required: {
+              value: true,
+              message: intl.formatMessage({
+                defaultMessage: 'Please enter a phone number',
+                description: 'Error message for phone number field',
+              }),
+            },
+          })}
         />
 
         <Button
@@ -72,7 +127,10 @@ const ClientForm = (props: Props) => {
           color="primary"
           sx={{ width: 'fit-content' }}
         >
-          Register client
+          <FormattedMessage
+            defaultMessage="Submit"
+            description="Submit button"
+          />
         </Button>
       </Stack>
     </form>

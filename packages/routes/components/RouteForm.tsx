@@ -10,6 +10,7 @@ import Stack from '@mui/material/Stack'
 import TextField from '@mui/material/TextField'
 import { Addresses } from 'addresses/models'
 import { useForm } from 'react-hook-form'
+import { FormattedMessage, useIntl } from 'react-intl'
 
 import { CreateRouteRequest } from '../models'
 
@@ -20,6 +21,7 @@ type Props = {
 
 const RouteForm = (props: Props) => {
   const { onSubmit, addresses } = props
+  const intl = useIntl()
   const {
     register,
     handleSubmit,
@@ -31,13 +33,21 @@ const RouteForm = (props: Props) => {
     <form onSubmit={handleSubmit(onSubmit)}>
       <Stack spacing={3}>
         <FormControl>
-          <InputLabel id="from">From</InputLabel>
+          <InputLabel id="from">
+            <FormattedMessage defaultMessage="From" description="From field" />
+          </InputLabel>
           <Select
             labelId="from"
             label="From"
             defaultValue=""
             {...register('from', {
-              required: { value: true, message: 'From is required' },
+              required: {
+                value: true,
+                message: intl.formatMessage({
+                  defaultMessage: 'Please select a starting point',
+                  description: 'Error message for from field',
+                }),
+              },
             })}
           >
             {addresses
@@ -51,13 +61,21 @@ const RouteForm = (props: Props) => {
         </FormControl>
 
         <FormControl>
-          <InputLabel id="to">To</InputLabel>
+          <InputLabel id="to">
+            <FormattedMessage defaultMessage="To" description="To field" />
+          </InputLabel>
           <Select
             labelId="to"
             label="To"
             defaultValue=""
             {...register('to', {
-              required: { value: true, message: 'To is required' },
+              required: {
+                value: true,
+                message: intl.formatMessage({
+                  defaultMessage: 'Please select an ending point',
+                  description: 'Error message for to field',
+                }),
+              },
             })}
           >
             {addresses
@@ -71,26 +89,44 @@ const RouteForm = (props: Props) => {
         </FormControl>
 
         <TextField
-          label="Cost"
+          label={
+            <FormattedMessage defaultMessage="Cost" description="Cost field" />
+          }
           type="number"
           helperText={errors.cost?.message}
           error={!!errors.cost}
           {...register('cost', {
-            required: { value: true, message: 'Cost is required' },
+            required: {
+              value: true,
+              message: intl.formatMessage({
+                defaultMessage: 'Please enter a cost',
+                description: 'Error message for cost field',
+              }),
+            },
           })}
         />
 
         <FormGroup>
           <FormControlLabel
             control={<Checkbox {...register('isCustomerPickedUpAtHome')} />}
-            label="Is customer picked up at home?"
+            label={
+              <FormattedMessage
+                defaultMessage="Is customer picked up at home?"
+                description="Customer picked up at home checkbox"
+              />
+            }
           />
         </FormGroup>
 
         <FormGroup>
           <FormControlLabel
             control={<Checkbox {...register('isCustomerDroppedOffAtHome')} />}
-            label="Is customer dropped off at home?"
+            label={
+              <FormattedMessage
+                defaultMessage="Is customer dropped off at home?"
+                description="Customer dropped off at home checkbox"
+              />
+            }
           />
         </FormGroup>
 
@@ -100,7 +136,10 @@ const RouteForm = (props: Props) => {
           color="primary"
           sx={{ width: 'fit-content' }}
         >
-          Register route
+          <FormattedMessage
+            defaultMessage="Create"
+            description="Create button"
+          />
         </Button>
       </Stack>
     </form>

@@ -7,6 +7,7 @@ import Stack from '@mui/material/Stack'
 import TextField from '@mui/material/TextField'
 import { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
+import { FormattedMessage, useIntl } from 'react-intl'
 import { Routes } from 'routes/models'
 import { Vehicles } from 'vehicles/models'
 
@@ -21,6 +22,7 @@ type Props = {
 
 const TransportSheetForm = (props: Props) => {
   const { onSubmit, routes, vehicles, dispatcherId } = props
+  const intl = useIntl()
   const {
     register,
     handleSubmit,
@@ -47,13 +49,24 @@ const TransportSheetForm = (props: Props) => {
     <form onSubmit={handleSubmit(onSubmit)}>
       <Stack spacing={3}>
         <FormControl>
-          <InputLabel id="routeId">Route</InputLabel>
+          <InputLabel id="routeId">
+            <FormattedMessage
+              defaultMessage="Route"
+              description="Route field"
+            />
+          </InputLabel>
           <Select
             labelId="routeId"
             label="Route"
             defaultValue=""
             {...register('routeId', {
-              required: { value: true, message: 'Route is required' },
+              required: {
+                value: true,
+                message: intl.formatMessage({
+                  defaultMessage: 'Please select a route',
+                  description: 'Error message for route field',
+                }),
+              },
             })}
           >
             {routes.map(route => (
@@ -65,13 +78,24 @@ const TransportSheetForm = (props: Props) => {
         </FormControl>
 
         <FormControl>
-          <InputLabel id="vehicleLicensePlate">Vehicle</InputLabel>
+          <InputLabel id="vehicleLicensePlate">
+            <FormattedMessage
+              defaultMessage="Vehicle"
+              description="Vehicle field"
+            />
+          </InputLabel>
           <Select
             labelId="vehicleLicensePlate"
             label="Vehicle"
             defaultValue=""
             {...register('vehicleLicensePlate', {
-              required: { value: true, message: 'Vehicle is required' },
+              required: {
+                value: true,
+                message: intl.formatMessage({
+                  defaultMessage: 'Please select a vehicle',
+                  description: 'Error message for vehicle field',
+                }),
+              },
             })}
           >
             {vehicles.map(vehicle => (
@@ -83,13 +107,24 @@ const TransportSheetForm = (props: Props) => {
         </FormControl>
 
         <TextField
-          label="Quota"
+          label={
+            <FormattedMessage
+              defaultMessage="Quota"
+              description="Quota field"
+            />
+          }
           type="number"
           defaultValue={0}
           helperText={errors.quota?.message}
           error={!!errors.quota}
           {...register('quota', {
-            required: { value: true, message: 'Quota is required' },
+            required: {
+              value: true,
+              message: intl.formatMessage({
+                defaultMessage: 'Please enter a quota',
+                description: 'Error message for quota field',
+              }),
+            },
           })}
         />
 
@@ -99,7 +134,10 @@ const TransportSheetForm = (props: Props) => {
           color="primary"
           sx={{ width: 'fit-content' }}
         >
-          Register transport sheet
+          <FormattedMessage
+            defaultMessage="Create"
+            description="Create button"
+          />
         </Button>
       </Stack>
     </form>

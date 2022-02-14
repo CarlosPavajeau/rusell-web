@@ -1,5 +1,6 @@
 import { Button, Stack, TextField } from '@mui/material'
 import { useForm } from 'react-hook-form'
+import { FormattedMessage, useIntl } from 'react-intl'
 
 import { CreateCompanyRequest } from '../models'
 
@@ -8,6 +9,7 @@ type Props = {
 }
 export const CompanyForm = (props: Props) => {
   const { onSubmit } = props
+  const intl = useIntl()
   const {
     register,
     handleSubmit,
@@ -22,19 +24,44 @@ export const CompanyForm = (props: Props) => {
     <form onSubmit={handleSubmit(onSubmit)}>
       <Stack spacing={2}>
         <TextField
-          label="Name"
-          helperText={errors.name?.type === 'required' && 'Name is required'}
+          label={
+            <FormattedMessage defaultMessage="Name" description="Name field" />
+          }
+          helperText={errors?.name?.message}
           error={!!errors.name}
-          {...register('name', { required: true })}
+          {...register('name', {
+            required: {
+              value: true,
+              message: intl.formatMessage({
+                defaultMessage: 'Please enter a name',
+                description: 'Error message for name field',
+              }),
+            },
+          })}
         />
 
-        <TextField label="Nit" {...register('nit')} />
+        <TextField
+          label={
+            <FormattedMessage defaultMessage="Nit" description="Nit field" />
+          }
+          {...register('nit')}
+        />
 
         <TextField
-          label="Info"
-          helperText={errors.info?.type === 'required' && 'Info is required'}
+          label={
+            <FormattedMessage defaultMessage="Info" description="Info field" />
+          }
+          helperText={errors?.info?.message}
           error={!!errors.info}
-          {...register('info', { required: true })}
+          {...register('info', {
+            required: {
+              value: true,
+              message: intl.formatMessage({
+                defaultMessage: 'Please enter an info',
+                description: 'Error message for info field',
+              }),
+            },
+          })}
         />
 
         <Button
@@ -44,7 +71,10 @@ export const CompanyForm = (props: Props) => {
           disabled={isSubmitting}
           sx={{ width: 'fit-content' }}
         >
-          Register company
+          <FormattedMessage
+            defaultMessage="Submit"
+            description="Submit button"
+          />
         </Button>
       </Stack>
     </form>

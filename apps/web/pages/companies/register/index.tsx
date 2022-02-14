@@ -1,8 +1,10 @@
-import { withPageAuthRequired } from '@auth0/nextjs-auth0'
 import { Card, CardContent, Container, Typography } from '@mui/material'
 import axios from 'axios'
 import { CompanyForm } from 'companies'
 import NextHead from 'next/head'
+import withAuthAndi18n from 'utils/withAuthAndi18n'
+
+export const getServerSideProps = withAuthAndi18n
 
 const RegisterCompany = () => {
   const handleSubmit = async values => {
@@ -28,7 +30,5 @@ const RegisterCompany = () => {
     </>
   )
 }
-
-export const getServerSideProps = withPageAuthRequired()
 
 export default RegisterCompany

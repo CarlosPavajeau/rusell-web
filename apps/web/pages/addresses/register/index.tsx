@@ -1,9 +1,11 @@
-import { withPageAuthRequired } from '@auth0/nextjs-auth0'
 import { Card, CardContent, Container, Typography } from '@mui/material'
 import AddressForm from 'addresses/components/AddressForm'
 import axios from 'axios'
 import NextHead from 'next/head'
 import DashboardLayout from 'ui/layouts/DashboardLayout'
+import withAuthAndi18n from 'utils/withAuthAndi18n'
+
+export const getServerSideProps = withAuthAndi18n
 
 const RegisterAddress = () => {
   const handleSubmit = async values => {
@@ -31,6 +33,5 @@ const RegisterAddress = () => {
 }
 
 RegisterAddress.Layout = DashboardLayout
-export const getServerSideProps = withPageAuthRequired()
 
 export default RegisterAddress

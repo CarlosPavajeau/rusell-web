@@ -1,4 +1,3 @@
-import { withPageAuthRequired } from '@auth0/nextjs-auth0'
 import { Card, CardContent, Container, Typography } from '@mui/material'
 import axios from 'axios'
 import { fetcher } from 'core/http/fetcher'
@@ -6,7 +5,10 @@ import { Employees, EmployeeType } from 'employees/models'
 import NextHead from 'next/head'
 import useSWR from 'swr'
 import DashboardLayout from 'ui/layouts/DashboardLayout'
+import withAuthAndi18n from 'utils/withAuthAndi18n'
 import VehicleForm from 'vehicles/components/VehicleForm'
+
+export const getServerSideProps = withAuthAndi18n
 
 const RegisterVehicle = () => {
   const {
@@ -62,6 +64,5 @@ const RegisterVehicle = () => {
 }
 
 RegisterVehicle.Layout = DashboardLayout
-export const getServerSideProps = withPageAuthRequired()
 
 export default RegisterVehicle

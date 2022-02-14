@@ -1,10 +1,394 @@
 {
-  "8NouKs": {
-    "defaultMessage": "Register vehicle",
-    "description": "Vehicles: Register vehicle"
+  "+MD4SW": {
+    "defaultMessage": "Modelo",
+    "description": "Model field"
+  },
+  "+PJbtx": {
+    "defaultMessage": "Por favor, ingrese un email válido",
+    "description": "Error message for email field"
+  },
+  "+RsxhH": {
+    "defaultMessage": "Info",
+    "description": "Info field"
+  },
+  "+itf/D": {
+    "defaultMessage": "Guardar",
+    "description": "Save button"
+  },
+  "0BZPiQ": {
+    "defaultMessage": "Por favor, ingrese el número de sillas",
+    "description": "Error message for chairs field"
+  },
+  "13tNKy": {
+    "defaultMessage": "Por favor, seleccione un tipo de empleado",
+    "description": "Error message for employee type field"
+  },
+  "1l//lh": {
+    "defaultMessage": "Por favor, seleccione un punto final",
+    "description": "Error message for to field"
+  },
+  "2lbiOz": {
+    "defaultMessage": "Por favor, ingrese el número de la tarjeta de propiedad",
+    "description": "Error message for property card number field"
+  },
+  "51EFF3": {
+    "defaultMessage": "Número de chasis",
+    "description": "Chassis number field"
+  },
+  "5DTIfV": {
+    "defaultMessage": "Desde",
+    "description": "From field"
+  },
+  "5lc+sl": {
+    "defaultMessage": "Segundo apellido",
+    "description": "Second surname field"
+  },
+  "5qjais": {
+    "defaultMessage": "Por favor, seleccione un vehículo",
+    "description": "Error message for vehicle field"
+  },
+  "6DEhL+": {
+    "defaultMessage": "Departamento",
+    "description": "State field"
+  },
+  "9n9krb": {
+    "defaultMessage": "Por favor, ingrese una cantidad",
+    "description": "Error message for amount field"
+  },
+  "Aw0MIO": {
+    "defaultMessage": "Descripción",
+    "description": "Description field"
+  },
+  "B5NFjB": {
+    "defaultMessage": "Vehículo",
+    "description": "Vehicle field"
+  },
+  "BPdJVZ": {
+    "defaultMessage": "Por favor, ingrese un modelo",
+    "description": "Error message for model field"
+  },
+  "BekQAB": {
+    "defaultMessage": "Por favor, ingrese un departamento",
+    "description": "Error message for state field"
+  },
+  "Cd/RpK": {
+    "defaultMessage": "Por favor, seleccione un remitente",
+    "description": "Error message for receiver field"
+  },
+  "DRFD7A": {
+    "defaultMessage": "Por favor, ingrese un email",
+    "description": "Error message for email field"
+  },
+  "E2DTLc": {
+    "defaultMessage": "Número interno",
+    "description": "Internal number field"
+  },
+  "EWleUl": {
+    "defaultMessage": "Por favor, ingrese una ciudad",
+    "description": "Error message for city field"
+  },
+  "FL+uAd": {
+    "defaultMessage": "¿Se recoge al cliente en su casa?",
+    "description": "Customer picked up at home checkbox"
+  },
+  "GihU41": {
+    "defaultMessage": "Segundo nombre",
+    "description": "Middle name field"
+  },
+  "IlC3+3": {
+    "defaultMessage": "Ciudad",
+    "description": "City field"
+  },
+  "InG78Q": {
+    "defaultMessage": "Número de teléfono",
+    "description": "Phone number field"
+  },
+  "Jqius8": {
+    "defaultMessage": "Street name",
+    "description": "Street name field"
+  },
+  "Jy3VAc": {
+    "defaultMessage": "Número de tarjeta de propiedad",
+    "description": "Property card number field"
+  },
+  "KaOUYE": {
+    "defaultMessage": "Primer apellido",
+    "description": "First surname field"
+  },
+  "KywO2M": {
+    "defaultMessage": "Asientos",
+    "description": "Seats field"
+  },
+  "Mq/BvZ": {
+    "defaultMessage": "Por favor, ingrese información",
+    "description": "Error message for info field"
+  },
+  "Ngh+q0": {
+    "defaultMessage": "Comentarios",
+    "description": "Comments field"
+  },
+  "Nh/LW6": {
+    "defaultMessage": "Email",
+    "description": "Email field"
+  },
+  "Oep6va": {
+    "defaultMessage": "Enviar",
+    "description": "Submit button"
+  },
+  "OnvmBJ": {
+    "defaultMessage": "Por favor, ingrese un costo",
+    "description": "Error message for cost field"
+  },
+  "PSvrQz": {
+    "defaultMessage": "Por favor, ingrese el número de asientos",
+    "description": "Error message for seats field"
+  },
+  "PTWJo2": {
+    "defaultMessage": "Nit",
+    "description": "Nit field"
+  },
+  "Q1pk1X": {
+    "defaultMessage": "Por favor, ingrese un id",
+    "description": "Error message for id field"
+  },
+  "Q6Jtg6": {
+    "defaultMessage": "País",
+    "description": "Country field"
+  },
+  "Q9ykNZ": {
+    "defaultMessage": "Ruta",
+    "description": "Route field"
+  },
+  "QTuken": {
+    "defaultMessage": "Por favor, ingrese un cupo",
+    "description": "Error message for quota field"
+  },
+  "RK/q2Y": {
+    "defaultMessage": "Street number",
+    "description": "Street number field"
+  },
+  "RXNsZ3": {
+    "defaultMessage": "Por favor, ingrese un número interno",
+    "description": "Error message for internal number field"
+  },
+  "Rarzvv": {
+    "defaultMessage": "Por favor, seleccione una fecha de vencimiento",
+    "description": "Error message for due date field"
+  },
+  "T8opIP": {
+    "defaultMessage": "Sillas",
+    "description": "Chairs field"
+  },
+  "UFUYFq": {
+    "defaultMessage": "Por favor, seleccione un punto de inicio",
+    "description": "Error message for from field"
+  },
+  "USzrGc": {
+    "defaultMessage": "Marca",
+    "description": "Mark field"
+  },
+  "UXwuhT": {
+    "defaultMessage": "Please enter an intersection",
+    "description": "Error message for intersection field"
+  },
+  "VaBpQ8": {
+    "defaultMessage": "Cantidad",
+    "description": "Amount field"
+  },
+  "W/OgO3": {
+    "defaultMessage": "Please enter a street number",
+    "description": "Error message for street number field"
+  },
+  "X/Oyea": {
+    "defaultMessage": "Conductor",
+    "description": "Driver field label"
+  },
+  "XhNAna": {
+    "defaultMessage": "Nombre",
+    "description": "Name field"
+  },
+  "YAEcCV": {
+    "defaultMessage": "Por favor, ingrese un color",
+    "description": "Error message for color field"
+  },
+  "Z7NB4F": {
+    "defaultMessage": "Por favor, seleccione un fecha de renovación",
+    "description": "Error message for renovation date field"
+  },
+  "Zx/OPP": {
+    "defaultMessage": "Por favor, ingrese una marca",
+    "description": "Error message for mark field"
+  },
+  "ZxU3RQ": {
+    "defaultMessage": "Por favor, ingrese los comentarios",
+    "description": "Error message for comments field"
+  },
+  "aSv3PI": {
+    "defaultMessage": "Número de motor",
+    "description": "Engine number field"
+  },
+  "aWbXn2": {
+    "defaultMessage": "Por favor, ingrese un nombre",
+    "description": "Error message for name field"
+  },
+  "asHDJE": {
+    "defaultMessage": "Costo",
+    "description": "Cost field"
+  },
+  "bAymuM": {
+    "defaultMessage": "Remitente",
+    "description": "Sender field"
+  },
+  "bOtGnJ": {
+    "defaultMessage": "Por favor, seleccione un conductor",
+    "description": "Error message for driver field"
+  },
+  "bcIbnX": {
+    "defaultMessage": "Primer nombre",
+    "description": "First name field"
+  },
+  "c4METn": {
+    "defaultMessage": "Crear",
+    "description": "Create button"
+  },
+  "cYFJx0": {
+    "defaultMessage": "Cliente",
+    "description": "Client field"
+  },
+  "cYRYIH": {
+    "defaultMessage": "Por favor, ingrese un barrio",
+    "description": "Error message for neighborhood field"
   },
   "d2vCv/": {
     "defaultMessage": "Cerrar sesión",
     "description": "Index: Logout"
+  },
+  "dWx7r1": {
+    "defaultMessage": "Color",
+    "description": "Color field"
+  },
+  "e/jUZy": {
+    "defaultMessage": "Id",
+    "description": "Id field"
+  },
+  "eV/Ft1": {
+    "defaultMessage": "Número del modelo",
+    "description": "Model number field"
+  },
+  "ggjPSv": {
+    "defaultMessage": "Tipo de empleado",
+    "description": "Employee type field"
+  },
+  "godlxQ": {
+    "defaultMessage": "Fecha de renovación",
+    "description": "Renovation date field"
+  },
+  "hxa9N+": {
+    "defaultMessage": "Barrio",
+    "description": "Neighborhood field"
+  },
+  "jQkHph": {
+    "defaultMessage": "Fecha de vencimiento",
+    "description": "Due date field"
+  },
+  "jXfkAb": {
+    "defaultMessage": "Por favor, ingrese un número de chasis",
+    "description": "Error message for chassis number field"
+  },
+  "jYLEJI": {
+    "defaultMessage": "Por favor, seleccione un remitente",
+    "description": "Error message for sender field"
+  },
+  "jf8N7Q": {
+    "defaultMessage": "Por favor, ingrese un número de teléfono",
+    "description": "Error message for phone number field"
+  },
+  "khRxcK": {
+    "defaultMessage": "Por favor, ingrese una matrícula",
+    "description": "Error message for license plate field"
+  },
+  "kr84ma": {
+    "defaultMessage": "Destinario",
+    "description": "Receiver field"
+  },
+  "kt0Z/B": {
+    "defaultMessage": "Por favor, ingrese un número de motor",
+    "description": "Error message for engine number field"
+  },
+  "lNeHuY": {
+    "defaultMessage": "Por favor, ingrese una matrícula válida (ej. ABC-123)",
+    "description": "Error message for license plate field"
+  },
+  "lz2h6L": {
+    "defaultMessage": "Intersection",
+    "description": "Intersection field"
+  },
+  "m2NKvt": {
+    "defaultMessage": "Please enter a street name",
+    "description": "Error message for street name field"
+  },
+  "nNwQ03": {
+    "defaultMessage": "Por favor, ingrese un tipo",
+    "description": "Error message for type field"
+  },
+  "pbMuT+": {
+    "defaultMessage": "Dueño",
+    "description": "Owner field label"
+  },
+  "qAKjjh": {
+    "defaultMessage": "Cuota",
+    "description": "Quota field"
+  },
+  "r8Y8TX": {
+    "defaultMessage": "Por favor, ingrese un número de teléfono válido",
+    "description": "Error message for phone number field"
+  },
+  "rKrzRB": {
+    "defaultMessage": "Tipo",
+    "description": "Type field"
+  },
+  "sSWq9M": {
+    "defaultMessage": "Por favor, seleccione una ruta",
+    "description": "Error message for route field"
+  },
+  "sv/BAU": {
+    "defaultMessage": "Por favor, seleccione un cliente",
+    "description": "Error message for client field"
+  },
+  "uDHEBo": {
+    "defaultMessage": "Hacia",
+    "description": "To field"
+  },
+  "uSwP3t": {
+    "defaultMessage": "Por favor, ingrese un primer nomnbre",
+    "description": "Error message for first name field"
+  },
+  "uUJOac": {
+    "defaultMessage": "¿Se deja al cliente en su casa?",
+    "description": "Customer dropped off at home checkbox"
+  },
+  "vNCORX": {
+    "defaultMessage": "Matrícula",
+    "description": "license plate field"
+  },
+  "vusZ7V": {
+    "defaultMessage": "Por favor, seleccione un dueño",
+    "description": "Error message for owner field"
+  },
+  "vv7Rw8": {
+    "defaultMessage": "Por favor, ingrese un número de modelo",
+    "description": "Error message for model number field"
+  },
+  "x/A+U+": {
+    "defaultMessage": "Por favor, ingrese un primer apellido",
+    "description": "Error message for first surname field"
+  },
+  "xTQvbQ": {
+    "defaultMessage": "Por favor, ingrese un pais",
+    "description": "Error message for country field"
+  },
+  "zgMuR/": {
+    "defaultMessage": "Por favor, ingrese una descripción",
+    "description": "Error message for description field"
   }
 }

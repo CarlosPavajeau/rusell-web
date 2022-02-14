@@ -7,6 +7,7 @@ import TextField from '@mui/material/TextField'
 import ClientSelectOption from 'clients/components/ClientSelectOption'
 import { Clients } from 'clients/models'
 import { useForm } from 'react-hook-form'
+import { FormattedMessage, useIntl } from 'react-intl'
 
 import { CreateTicketRequest } from '../models'
 
@@ -18,6 +19,7 @@ type Props = {
 
 const TicketsForm = (props: Props) => {
   const { clients, seatPrice, onSubmit } = props
+  const intl = useIntl()
   const {
     register,
     handleSubmit,
@@ -31,13 +33,24 @@ const TicketsForm = (props: Props) => {
     <form onSubmit={handleSubmit(onSubmit)}>
       <Stack spacing={3}>
         <FormControl>
-          <InputLabel id="client">Client</InputLabel>
+          <InputLabel id="client">
+            <FormattedMessage
+              defaultMessage="Client"
+              description="Client field"
+            />
+          </InputLabel>
           <Select
             labelId="client"
             label="Client"
             defaultValue=""
             {...register('clientId', {
-              required: { value: true, message: 'Client is required' },
+              required: {
+                value: true,
+                message: intl.formatMessage({
+                  defaultMessage: 'Please select a client',
+                  description: 'Error message for client field',
+                }),
+              },
             })}
           >
             {clients.map(client => (
@@ -47,12 +60,23 @@ const TicketsForm = (props: Props) => {
         </FormControl>
 
         <TextField
-          label="Seats"
+          label={
+            <FormattedMessage
+              defaultMessage="Seats"
+              description="Seats field"
+            />
+          }
           type="number"
           helperText={errors.seats?.message}
           error={!!errors.seats}
           {...register('seats', {
-            required: { value: true, message: 'Seats is required' },
+            required: {
+              value: true,
+              message: intl.formatMessage({
+                defaultMessage: 'Please enter the number of seats',
+                description: 'Error message for seats field',
+              }),
+            },
           })}
         />
 
@@ -62,7 +86,10 @@ const TicketsForm = (props: Props) => {
           color="primary"
           sx={{ width: 'fit-content' }}
         >
-          Register ticket
+          <FormattedMessage
+            defaultMessage="Create"
+            description="Create button"
+          />
         </Button>
       </Stack>
     </form>

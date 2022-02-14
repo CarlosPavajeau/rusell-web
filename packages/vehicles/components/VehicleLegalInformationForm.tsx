@@ -5,6 +5,7 @@ import Button from '@mui/material/Button'
 import Stack from '@mui/material/Stack'
 import TextField from '@mui/material/TextField'
 import { useForm } from 'react-hook-form'
+import { FormattedMessage, useIntl } from 'react-intl'
 
 import { CreateVehicleLegalInformationRequest } from '../models'
 
@@ -14,6 +15,7 @@ type Props = {
 
 const VehicleLegalInformationForm = (props: Props) => {
   const { onSubmit } = props
+  const intl = useIntl()
   const {
     register,
     handleSubmit,
@@ -26,20 +28,39 @@ const VehicleLegalInformationForm = (props: Props) => {
     <form onSubmit={handleSubmit(onSubmit)}>
       <Stack spacing={3}>
         <TextField
-          label="Type"
+          label={
+            <FormattedMessage defaultMessage="Type" description="Type field" />
+          }
           helperText={errors.type?.message}
           error={!!errors.type}
           {...register('type', {
-            required: { value: true, message: 'Type is required' },
+            required: {
+              value: true,
+              message: intl.formatMessage({
+                defaultMessage: 'Please enter a type',
+                description: 'Error message for type field',
+              }),
+            },
           })}
         />
 
         <LocalizationProvider dateAdapter={AdapterDateFns}>
           <DatePicker
-            label="Due date"
+            label={
+              <FormattedMessage
+                defaultMessage="Due date"
+                description="Due date field"
+              />
+            }
             value={watch('dueDate')}
             {...register('dueDate', {
-              required: { value: true, message: 'Due date is required' },
+              required: {
+                value: true,
+                message: intl.formatMessage({
+                  defaultMessage: 'Please select a due date',
+                  description: 'Error message for due date field',
+                }),
+              },
             })}
             onChange={date => {
               if (date) {
@@ -52,10 +73,21 @@ const VehicleLegalInformationForm = (props: Props) => {
 
         <LocalizationProvider dateAdapter={AdapterDateFns}>
           <DatePicker
-            label="Renovation date"
+            label={
+              <FormattedMessage
+                defaultMessage="Renovation date"
+                description="Renovation date field"
+              />
+            }
             value={watch('renovationDate')}
             {...register('renovationDate', {
-              required: { value: true, message: 'Renovation date is required' },
+              required: {
+                value: true,
+                message: intl.formatMessage({
+                  defaultMessage: 'Please select a renovation date',
+                  description: 'Error message for renovation date field',
+                }),
+              },
             })}
             onChange={date => {
               if (date) {
@@ -72,7 +104,7 @@ const VehicleLegalInformationForm = (props: Props) => {
           color="primary"
           sx={{ width: 'fit-content' }}
         >
-          Register vehicle legal information
+          <FormattedMessage defaultMessage="Save" description="Save button" />
         </Button>
       </Stack>
     </form>

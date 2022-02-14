@@ -1,5 +1,6 @@
 import { Button, Stack, TextField } from '@mui/material'
 import { useForm } from 'react-hook-form'
+import { FormattedMessage, useIntl } from 'react-intl'
 
 import { CreateAddressRequest } from '../models'
 
@@ -9,6 +10,7 @@ type Props = {
 
 const AddressForm = (props: Props) => {
   const { onSubmit } = props
+  const intl = useIntl()
   const {
     register,
     handleSubmit,
@@ -19,74 +21,160 @@ const AddressForm = (props: Props) => {
     <form onSubmit={handleSubmit(onSubmit)}>
       <Stack spacing={2}>
         <TextField
-          label="Country"
-          helperText={
-            errors.country?.type === 'required' && 'Country is required'
+          label={
+            <FormattedMessage
+              defaultMessage="Country"
+              description="Country field"
+            />
           }
+          helperText={errors.country?.message}
           error={!!errors.country}
-          {...register('country', { required: true })}
+          {...register('country', {
+            required: {
+              value: true,
+              message: intl.formatMessage({
+                defaultMessage: 'Please enter a country',
+                description: 'Error message for country field',
+              }),
+            },
+          })}
         />
 
         <TextField
-          label="State"
-          helperText={errors.state?.type === 'required' && 'State is required'}
+          label={
+            <FormattedMessage
+              defaultMessage="State"
+              description="State field"
+            />
+          }
+          helperText={errors.state?.message}
           error={!!errors.state}
-          {...register('state', { required: true })}
+          {...register('state', {
+            required: {
+              value: true,
+              message: intl.formatMessage({
+                defaultMessage: 'Please enter a state',
+                description: 'Error message for state field',
+              }),
+            },
+          })}
         />
 
         <TextField
-          label="City"
-          helperText={errors.city?.type === 'required' && 'City is required'}
+          label={
+            <FormattedMessage defaultMessage="City" description="City field" />
+          }
+          helperText={errors.city?.message}
           error={!!errors.city}
-          {...register('city', { required: true })}
+          {...register('city', {
+            required: {
+              value: true,
+              message: intl.formatMessage({
+                defaultMessage: 'Please enter a city',
+                description: 'Error message for city field',
+              }),
+            },
+          })}
         />
 
         <TextField
-          label="Neighborhood"
-          helperText={
-            errors.neighborhood?.type === 'required' &&
-            'Neighborhood is required'
+          label={
+            <FormattedMessage
+              defaultMessage="Neighborhood"
+              description="Neighborhood field"
+            />
           }
+          helperText={errors.neighborhood?.message}
           error={!!errors.neighborhood}
-          {...register('neighborhood', { required: true })}
+          {...register('neighborhood', {
+            required: {
+              value: true,
+              message: intl.formatMessage({
+                defaultMessage: 'Please enter a neighborhood',
+                description: 'Error message for neighborhood field',
+              }),
+            },
+          })}
         />
 
         <TextField
-          label="Street Name"
-          helperText={
-            errors.streetName?.type === 'required' && 'Street name is required'
+          label={
+            <FormattedMessage
+              defaultMessage="Street name"
+              description="Street name field"
+            />
           }
+          helperText={errors.streetName?.message}
           error={!!errors.streetName}
-          {...register('streetName', { required: true })}
+          {...register('streetName', {
+            required: {
+              value: true,
+              message: intl.formatMessage({
+                defaultMessage: 'Please enter a street name',
+                description: 'Error message for street name field',
+              }),
+            },
+          })}
         />
 
         <TextField
-          label="Intersection"
-          helperText={
-            errors.intersection?.type === 'required' &&
-            'Intersection is required'
+          label={
+            <FormattedMessage
+              defaultMessage="Intersection"
+              description="Intersection field"
+            />
           }
+          helperText={errors.intersection?.message}
           error={!!errors.intersection}
-          {...register('intersection', { required: true })}
+          {...register('intersection', {
+            required: {
+              value: true,
+              message: intl.formatMessage({
+                defaultMessage: 'Please enter an intersection',
+                description: 'Error message for intersection field',
+              }),
+            },
+          })}
         />
 
         <TextField
-          label="Street number"
-          helperText={
-            errors.streetNumber?.type === 'required' &&
-            'Street number is required'
+          label={
+            <FormattedMessage
+              defaultMessage="Street number"
+              description="Street number field"
+            />
           }
+          helperText={errors.streetNumber?.message}
           error={!!errors.streetNumber}
-          {...register('streetNumber', { required: true })}
+          {...register('streetNumber', {
+            required: {
+              value: true,
+              message: intl.formatMessage({
+                defaultMessage: 'Please enter a street number',
+                description: 'Error message for street number field',
+              }),
+            },
+          })}
         />
 
         <TextField
-          label="Comments"
-          helperText={
-            errors.comments?.type === 'required' && 'Comments is required'
+          label={
+            <FormattedMessage
+              defaultMessage="Comments"
+              description="Comments field"
+            />
           }
+          helperText={errors.comments?.message}
           error={!!errors.comments}
-          {...register('comments', { required: true })}
+          {...register('comments', {
+            required: {
+              value: false,
+              message: intl.formatMessage({
+                defaultMessage: 'Please enter comments',
+                description: 'Error message for comments field',
+              }),
+            },
+          })}
           multiline
           rows={4}
         />
@@ -97,7 +185,10 @@ const AddressForm = (props: Props) => {
           color="primary"
           sx={{ width: 'fit-content' }}
         >
-          Register address
+          <FormattedMessage
+            defaultMessage="Submit"
+            description="Submit button"
+          />
         </Button>
       </Stack>
     </form>

@@ -8,6 +8,7 @@ import TextField from '@mui/material/TextField'
 import ClientSelectOption from 'clients/components/ClientSelectOption'
 import { Clients } from 'clients/models'
 import { useForm } from 'react-hook-form'
+import { FormattedMessage, useIntl } from 'react-intl'
 import { Vehicles } from 'vehicles/models'
 
 import { CreateParcelRequest } from '../models'
@@ -21,6 +22,7 @@ type Props = {
 
 const ParcelForm = (props: Props) => {
   const { clients, vehicles, dispatcherId, onSubmit } = props
+  const intl = useIntl()
   const {
     register,
     handleSubmit,
@@ -36,13 +38,24 @@ const ParcelForm = (props: Props) => {
     <form onSubmit={handleSubmit(onSubmit)}>
       <Stack spacing={3}>
         <FormControl>
-          <InputLabel id="sender">Sender</InputLabel>
+          <InputLabel id="sender">
+            <FormattedMessage
+              defaultMessage="Sender"
+              description="Sender field"
+            />
+          </InputLabel>
           <Select
             labelId="sender"
             label="Sender"
             defaultValue=""
             {...register('senderId', {
-              required: { value: true, message: 'Sender is required' },
+              required: {
+                value: true,
+                message: intl.formatMessage({
+                  defaultMessage: 'Please select a sender',
+                  description: 'Error message for sender field',
+                }),
+              },
             })}
           >
             {clients
@@ -54,13 +67,24 @@ const ParcelForm = (props: Props) => {
         </FormControl>
 
         <FormControl>
-          <InputLabel id="receiver">Receiver</InputLabel>
+          <InputLabel id="receiver">
+            <FormattedMessage
+              defaultMessage="Receiver"
+              description="Receiver field"
+            />
+          </InputLabel>
           <Select
             labelId="receiver"
             label="receiver"
             defaultValue=""
             {...register('receiverId', {
-              required: { value: true, message: 'Receiver is required' },
+              required: {
+                value: true,
+                message: intl.formatMessage({
+                  defaultMessage: 'Please select a receiver',
+                  description: 'Error message for receiver field',
+                }),
+              },
             })}
           >
             {clients
@@ -72,13 +96,24 @@ const ParcelForm = (props: Props) => {
         </FormControl>
 
         <FormControl>
-          <InputLabel id="vehicle">Vehicle</InputLabel>
+          <InputLabel id="vehicle">
+            <FormattedMessage
+              defaultMessage="Vehicle"
+              description="Vehicle field"
+            />
+          </InputLabel>
           <Select
             labelId="vehicle"
             label="Vehicle"
             defaultValue=""
             {...register('vehicleLicensePlate', {
-              required: { value: true, message: 'Vehicle is required' },
+              required: {
+                value: true,
+                message: intl.formatMessage({
+                  defaultMessage: 'Please select a vehicle',
+                  description: 'Error message for vehicle field',
+                }),
+              },
             })}
           >
             {vehicles.map(vehicle => (
@@ -90,23 +125,42 @@ const ParcelForm = (props: Props) => {
         </FormControl>
 
         <TextField
-          label="Cost"
+          label={
+            <FormattedMessage defaultMessage="Cost" description="Cost field" />
+          }
           type="number"
           helperText={errors.cost?.message}
           error={!!errors.cost}
           {...register('cost', {
-            required: { value: true, message: 'Cost is required' },
+            required: {
+              value: true,
+              message: intl.formatMessage({
+                defaultMessage: 'Please enter a cost',
+                description: 'Error message for cost field',
+              }),
+            },
           })}
         />
 
         <TextField
-          label="Description"
+          label={
+            <FormattedMessage
+              defaultMessage="Description"
+              description="Description field"
+            />
+          }
           helperText={errors.description?.message}
           error={!!errors.description}
           multiline
           rows={4}
           {...register('description', {
-            required: { value: true, message: 'Description is required' },
+            required: {
+              value: true,
+              message: intl.formatMessage({
+                defaultMessage: 'Please enter a description',
+                description: 'Error message for description field',
+              }),
+            },
           })}
         />
 
@@ -116,7 +170,10 @@ const ParcelForm = (props: Props) => {
           color="primary"
           sx={{ width: 'fit-content' }}
         >
-          Register parcel
+          <FormattedMessage
+            defaultMessage="Create"
+            description="Create button"
+          />
         </Button>
       </Stack>
     </form>
