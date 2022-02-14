@@ -141,7 +141,7 @@ export const getDesignTokens = (mode: PaletteMode) =>
     },
     spacing: 10,
     typography: {
-      fontFamily: ['Open Sans', ...systemFont].join(','),
+      fontFamily: ['Inter', ...systemFont].join(','),
       h1: {
         fontSize: 'clamp(2.625rem, 1.2857rem + 3.5714vw, 4rem)',
         fontWeight: 800,
