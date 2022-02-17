@@ -4,7 +4,6 @@ import useCompany from 'companies/hooks/useCompany'
 import { fetcher } from 'core/http/fetcher'
 import { Employees, EmployeeType } from 'employees/models'
 import NextHead from 'next/head'
-import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 import useSWR from 'swr'
@@ -17,6 +16,8 @@ export const getServerSideProps = withAuthAndi18n
 const RegisterVehicle = () => {
   const [company, loadingCompany, companyError] = useCompany()
   const router = useRouter()
+
+  console.log(company)
 
   const {
     data: employees,
@@ -81,7 +82,6 @@ const RegisterVehicle = () => {
               onSubmit={handleSubmit}
             />
           </CardContent>
-          <Link href={'/addresses/register'}>Hle</Link>
         </Card>
       </Container>
     </>
