@@ -17,8 +17,6 @@ const RegisterVehicle = () => {
   const [company, loadingCompany, companyError] = useCompany()
   const router = useRouter()
 
-  console.log(company)
-
   const {
     data: employees,
     error: employeeError,
