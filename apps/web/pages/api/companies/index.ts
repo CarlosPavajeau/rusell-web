@@ -4,9 +4,13 @@ import { NextApiRequest, NextApiResponse } from 'next'
 import withBearerToken from 'utils/auth0/withBearerToken'
 
 const handler = async (request: NextApiRequest, response: NextApiResponse) => {
-  await CompaniesService.save(request.body)
+  if (request.method === 'POST') {
+    await CompaniesService.save(request.body)
+    response.status(200)
+  }
 
-  response.status(200)
+  const company = await CompaniesService.fetch()
+  response.status(200).json(company)
 }
 
 export default withApiAuthRequired(withBearerToken(handler))
