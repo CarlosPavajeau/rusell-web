@@ -11,9 +11,18 @@
     "defaultMessage": "Info",
     "description": "Info field"
   },
+  "+U6ozc": {
+    "defaultMessage": "Type"
+  },
   "+itf/D": {
     "defaultMessage": "Save",
     "description": "Save button"
+  },
+  "/VnDMl": {
+    "defaultMessage": "Other"
+  },
+  "022WAP": {
+    "defaultMessage": "Dispatcher"
   },
   "0BZPiQ": {
     "defaultMessage": "Please enter a number of chairs",
@@ -55,6 +64,9 @@
     "defaultMessage": "Please enter an amount",
     "description": "Error message for amount field"
   },
+  "A6J4LT": {
+    "defaultMessage": "Toggle to dark theme"
+  },
   "Aw0MIO": {
     "defaultMessage": "Description",
     "description": "Description field"
@@ -75,6 +87,9 @@
     "defaultMessage": "Please select a receiver",
     "description": "Error message for receiver field"
   },
+  "CfTkoi": {
+    "defaultMessage": "No employees registered"
+  },
   "DRFD7A": {
     "defaultMessage": "Please enter an email",
     "description": "Error message for email field"
@@ -91,9 +106,19 @@
     "defaultMessage": "Is customer picked up at home?",
     "description": "Customer picked up at home checkbox"
   },
+  "G6ZuZE": {
+    "defaultMessage": "Employees",
+    "description": "page title"
+  },
   "GihU41": {
     "defaultMessage": "Middle name",
     "description": "Middle name field"
+  },
+  "HAlOn1": {
+    "defaultMessage": "Name"
+  },
+  "HHzdGS": {
+    "defaultMessage": "Employees"
   },
   "IlC3+3": {
     "defaultMessage": "City",
@@ -118,6 +143,12 @@
   "KywO2M": {
     "defaultMessage": "Seats",
     "description": "Seats field"
+  },
+  "MbbFzn": {
+    "defaultMessage": "Driver"
+  },
+  "MdVR3k": {
+    "defaultMessage": "Toggle to light theme"
   },
   "Mq/BvZ": {
     "defaultMessage": "Please enter an info",
@@ -162,6 +193,9 @@
   "QTuken": {
     "defaultMessage": "Please enter a quota",
     "description": "Error message for quota field"
+  },
+  "Qm/HJg": {
+    "defaultMessage": "Register employee"
   },
   "RK/q2Y": {
     "defaultMessage": "Street number",
@@ -302,6 +336,9 @@
   "jf8N7Q": {
     "defaultMessage": "Please enter a phone number",
     "description": "Error message for phone number field"
+  },
+  "kGGU2D": {
+    "defaultMessage": "Id"
   },
   "khRxcK": {
     "defaultMessage": "Please enter a license plate",

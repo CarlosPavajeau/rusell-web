@@ -11,9 +11,18 @@
     "defaultMessage": "Info",
     "description": "Info field"
   },
+  "+U6ozc": {
+    "defaultMessage": "Tipo"
+  },
   "+itf/D": {
     "defaultMessage": "Guardar",
     "description": "Save button"
+  },
+  "/VnDMl": {
+    "defaultMessage": "Otro"
+  },
+  "022WAP": {
+    "defaultMessage": "Despachador"
   },
   "0BZPiQ": {
     "defaultMessage": "Por favor, ingrese el número de sillas",
@@ -55,6 +64,9 @@
     "defaultMessage": "Por favor, ingrese una cantidad",
     "description": "Error message for amount field"
   },
+  "A6J4LT": {
+    "defaultMessage": "Cambiar a tema oscuro"
+  },
   "Aw0MIO": {
     "defaultMessage": "Descripción",
     "description": "Description field"
@@ -75,6 +87,9 @@
     "defaultMessage": "Por favor, seleccione un remitente",
     "description": "Error message for receiver field"
   },
+  "CfTkoi": {
+    "defaultMessage": "No hay empleados registrados"
+  },
   "DRFD7A": {
     "defaultMessage": "Por favor, ingrese un email",
     "description": "Error message for email field"
@@ -91,9 +106,19 @@
     "defaultMessage": "¿Se recoge al cliente en su casa?",
     "description": "Customer picked up at home checkbox"
   },
+  "G6ZuZE": {
+    "defaultMessage": "Empleados",
+    "description": "page title"
+  },
   "GihU41": {
     "defaultMessage": "Segundo nombre",
     "description": "Middle name field"
+  },
+  "HAlOn1": {
+    "defaultMessage": "Nombre"
+  },
+  "HHzdGS": {
+    "defaultMessage": "Empleados"
   },
   "IlC3+3": {
     "defaultMessage": "Ciudad",
@@ -118,6 +143,12 @@
   "KywO2M": {
     "defaultMessage": "Asientos",
     "description": "Seats field"
+  },
+  "MbbFzn": {
+    "defaultMessage": "Conductor"
+  },
+  "MdVR3k": {
+    "defaultMessage": "Cambiar a tema claro"
   },
   "Mq/BvZ": {
     "defaultMessage": "Por favor, ingrese información",
@@ -162,6 +193,9 @@
   "QTuken": {
     "defaultMessage": "Por favor, ingrese un cupo",
     "description": "Error message for quota field"
+  },
+  "Qm/HJg": {
+    "defaultMessage": "Registrar empleado"
   },
   "RK/q2Y": {
     "defaultMessage": "Street number",
@@ -302,6 +336,9 @@
   "jf8N7Q": {
     "defaultMessage": "Por favor, ingrese un número de teléfono",
     "description": "Error message for phone number field"
+  },
+  "kGGU2D": {
+    "defaultMessage": "Id"
   },
   "khRxcK": {
     "defaultMessage": "Por favor, ingrese una matrícula",
