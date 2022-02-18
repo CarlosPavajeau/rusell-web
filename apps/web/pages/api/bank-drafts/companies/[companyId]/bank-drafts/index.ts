@@ -9,7 +9,7 @@ const handler = async (request: NextApiRequest, response: NextApiResponse) => {
 
   await BankDraftsService.save(body, companyId as string)
 
-  response.status(200)
+  response.status(201).end()
 }
 
 export default withApiAuthRequired(withBearerToken(handler))

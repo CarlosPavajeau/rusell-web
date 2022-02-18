@@ -9,7 +9,7 @@ const handler = async (request: NextApiRequest, response: NextApiResponse) => {
 
   await VehiclesService.saveLegalInformation(body, licensePlate as string)
 
-  response.status(200)
+  response.status(201).end()
 }
 
 export default withApiAuthRequired(withBearerToken(handler))

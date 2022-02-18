@@ -10,7 +10,7 @@ const handler = async (request: NextApiRequest, response: NextApiResponse) => {
     const { body } = request
     await TicketsService.save(body, transportSheetId as string)
 
-    response.status(200)
+    response.status(201).end()
   }
 
   if (request.method === 'GET') {

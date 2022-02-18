@@ -10,7 +10,7 @@ const handler = async (request: NextApiRequest, response: NextApiResponse) => {
     const { body } = request
     const id = await TransportSheetsService.save(body, companyId as string)
 
-    response.status(200).json(id)
+    response.status(201).json(id)
   }
 
   if (request.method === 'GET') {

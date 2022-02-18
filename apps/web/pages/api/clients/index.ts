@@ -8,7 +8,7 @@ const handler = async (request: NextApiRequest, response: NextApiResponse) => {
 
   await ClientsService.save(body)
 
-  response.status(200)
+  response.status(201).end()
 }
 
 export default withApiAuthRequired(withBearerToken(handler))
