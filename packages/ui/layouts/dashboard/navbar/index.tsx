@@ -8,6 +8,7 @@ import Toolbar from '@mui/material/Toolbar'
 
 import Hidden from '../../../Hidden'
 import AccountPopover from './AccountPopover'
+import ToggleThemeButton from './ToggleThemeButton'
 
 const DRAWER_WIDTH = 280
 const APPBAR_MOBILE = 64
@@ -58,6 +59,7 @@ const DashboardNavbar = (props: Props) => {
           alignItems="center"
           spacing={{ xs: 0.5, sm: 1.5 }}
         >
+          <ToggleThemeButton />
           <AccountPopover />
         </Stack>
       </ToolbarStyle>
