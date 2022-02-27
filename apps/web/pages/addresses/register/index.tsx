@@ -2,14 +2,18 @@ import { Card, CardContent, Container, Typography } from '@mui/material'
 import AddressForm from 'addresses/components/AddressForm'
 import axios from 'axios'
 import NextHead from 'next/head'
+import { useRouter } from 'next/router'
 import DashboardLayout from 'ui/layouts/DashboardLayout'
 import withAuthAndi18n from 'utils/withAuthAndi18n'
 
 export const getServerSideProps = withAuthAndi18n
 
 const RegisterAddress = () => {
+  const router = useRouter()
+
   const handleSubmit = async values => {
     await axios.post('/api/addresses', values)
+    router.push('/addresses')
   }
 
   return (
