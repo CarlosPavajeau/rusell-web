@@ -40,6 +40,9 @@
     "defaultMessage": "Por favor, ingrese el número de la tarjeta de propiedad",
     "description": "Error message for property card number field"
   },
+  "3wSbMZ": {
+    "defaultMessage": "Sillas"
+  },
   "51EFF3": {
     "defaultMessage": "Número de chasis",
     "description": "Chassis number field"
@@ -66,6 +69,9 @@
   },
   "A6J4LT": {
     "defaultMessage": "Cambiar a tema oscuro"
+  },
+  "Aj6ic0": {
+    "defaultMessage": "Marca"
   },
   "Aw0MIO": {
     "defaultMessage": "Descripción",
@@ -98,6 +104,9 @@
     "defaultMessage": "Número interno",
     "description": "Internal number field"
   },
+  "EQOqrL": {
+    "defaultMessage": "Nombre del conductor"
+  },
   "EWleUl": {
     "defaultMessage": "Por favor, ingrese una ciudad",
     "description": "Error message for city field"
@@ -105,6 +114,9 @@
   "FL+uAd": {
     "defaultMessage": "¿Se recoge al cliente en su casa?",
     "description": "Customer picked up at home checkbox"
+  },
+  "FW9ymt": {
+    "defaultMessage": "Registrar encomienda"
   },
   "G6ZuZE": {
     "defaultMessage": "Empleados",
@@ -144,11 +156,17 @@
     "defaultMessage": "Asientos",
     "description": "Seats field"
   },
+  "LvMKqS": {
+    "defaultMessage": "Registrar giro"
+  },
   "MbbFzn": {
     "defaultMessage": "Conductor"
   },
   "MdVR3k": {
     "defaultMessage": "Cambiar a tema claro"
+  },
+  "MhwYwI": {
+    "defaultMessage": "Matrícula"
   },
   "Mq/BvZ": {
     "defaultMessage": "Por favor, ingrese información",
@@ -248,6 +266,9 @@
   "Z7NB4F": {
     "defaultMessage": "Por favor, seleccione un fecha de renovación",
     "description": "Error message for renovation date field"
+  },
+  "ZYT9kY": {
+    "defaultMessage": "Aún no tienes ningún vehículo."
   },
   "Zx/OPP": {
     "defaultMessage": "Por favor, ingrese una marca",
@@ -364,6 +385,9 @@
     "defaultMessage": "Por favor, ingrese una vía",
     "description": "Error message for street name field"
   },
+  "n6HG4o": {
+    "defaultMessage": "No se encontraron direcciones"
+  },
   "nNwQ03": {
     "defaultMessage": "Por favor, ingrese un tipo",
     "description": "Error message for type field"
@@ -376,6 +400,9 @@
     "defaultMessage": "Cuota",
     "description": "Quota field"
   },
+  "r6wuJ3": {
+    "defaultMessage": "Vehículos"
+  },
   "r8Y8TX": {
     "defaultMessage": "Por favor, ingrese un número de teléfono válido",
     "description": "Error message for phone number field"
@@ -383,6 +410,9 @@
   "rKrzRB": {
     "defaultMessage": "Tipo",
     "description": "Type field"
+  },
+  "rhSI1/": {
+    "defaultMessage": "Modelo"
   },
   "sSWq9M": {
     "defaultMessage": "Por favor, seleccione una ruta",
@@ -396,6 +426,9 @@
     "defaultMessage": "Hacia",
     "description": "To field"
   },
+  "uMhpKe": {
+    "defaultMessage": "Color"
+  },
   "uSwP3t": {
     "defaultMessage": "Por favor, ingrese un primer nomnbre",
     "description": "Error message for first name field"
@@ -403,6 +436,9 @@
   "uUJOac": {
     "defaultMessage": "¿Se deja al cliente en su casa?",
     "description": "Customer dropped off at home checkbox"
+  },
+  "v4Y0Up": {
+    "defaultMessage": "Registrar ruta"
   },
   "vNCORX": {
     "defaultMessage": "Matrícula",
@@ -419,6 +455,9 @@
   "x/A+U+": {
     "defaultMessage": "Por favor, ingrese un primer apellido",
     "description": "Error message for first surname field"
+  },
+  "xBrtnx": {
+    "defaultMessage": "Direcciones"
   },
   "xTQvbQ": {
     "defaultMessage": "Por favor, ingrese un pais",
