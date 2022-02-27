@@ -13,7 +13,7 @@ const RegisterAddress = () => {
 
   const handleSubmit = async values => {
     await axios.post('/api/addresses', values)
-    router.push('/addresses')
+    await router.push('/addresses')
   }
 
   return (
