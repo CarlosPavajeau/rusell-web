@@ -19,10 +19,10 @@ const EmployeeTypeChip = ({ type }: { type: EmployeeType }) => {
 
   let label
   switch (type) {
-    case EmployeeType.Dispatcher:
+    case EmployeeType.Driver:
       label = intl.formatMessage({ defaultMessage: 'Driver' })
       break
-    case EmployeeType.Driver:
+    case EmployeeType.Dispatcher:
       label = intl.formatMessage({ defaultMessage: 'Dispatcher' })
       break
     default:
