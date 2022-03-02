@@ -1,11 +1,5 @@
-import Button from '@mui/material/Button'
-import FormControl from '@mui/material/FormControl'
-import FormHelperText from '@mui/material/FormHelperText'
-import InputLabel from '@mui/material/InputLabel'
-import MenuItem from '@mui/material/MenuItem'
-import Select from '@mui/material/Select'
-import Stack from '@mui/material/Stack'
-import TextField from '@mui/material/TextField'
+import { Button, Grid, Input, Radio, Spacer, Text } from '@nextui-org/react'
+import { FC } from 'react'
 import { useForm } from 'react-hook-form'
 import { FormattedMessage, useIntl } from 'react-intl'
 
@@ -15,188 +9,205 @@ type Props = {
   onSubmit: (employee: CreateEmployeeRequest) => void
 }
 
-const EmployeeForm = (props: Props) => {
-  const { onSubmit } = props
+const EmployeeForm: FC<Props> = ({ onSubmit }) => {
   const intl = useIntl()
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    setValue,
+    formState: { errors, isSubmitting },
   } = useForm<CreateEmployeeRequest>()
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <Stack spacing={3}>
-        <TextField
-          label={
-            <FormattedMessage defaultMessage="Id" description="Id field" />
-          }
-          helperText={errors.id?.message}
-          error={!!errors.id}
-          {...register('id', {
-            required: {
-              value: true,
-              message: intl.formatMessage({
-                defaultMessage: 'Please enter an id',
-                description: 'Error message for id field',
-              }),
-            },
-          })}
-        />
+      <Grid.Container gap={2}>
+        <Grid xs={12}>
+          <Input
+            label={intl.formatMessage({
+              defaultMessage: 'Id',
+              description: 'Id field',
+            })}
+            helperText={errors.id?.message}
+            helperColor="error"
+            status={errors.id ? 'error' : 'default'}
+            width="100%"
+            {...register('id', {
+              required: {
+                value: true,
+                message: intl.formatMessage({
+                  defaultMessage: 'Please enter an id',
+                  description: 'Error message for id field',
+                }),
+              },
+            })}
+          />
+        </Grid>
 
-        <TextField
-          label={
-            <FormattedMessage
-              defaultMessage="First name"
-              description="First name field"
-            />
-          }
-          helperText={errors.firstName?.message}
-          error={!!errors.firstName}
-          {...register('firstName', {
-            required: {
-              value: true,
-              message: intl.formatMessage({
-                defaultMessage: 'Please enter a first name',
-                description: 'Error message for first name field',
-              }),
-            },
-          })}
-        />
+        <Grid xs={12} md={6}>
+          <Input
+            label={intl.formatMessage({
+              defaultMessage: 'First name',
+              description: 'First name field',
+            })}
+            helperText={errors.firstName?.message}
+            helperColor="error"
+            status={errors.firstName ? 'error' : 'default'}
+            width="100%"
+            {...register('firstName', {
+              required: {
+                value: true,
+                message: intl.formatMessage({
+                  defaultMessage: 'Please enter a first name',
+                  description: 'Error message for first name field',
+                }),
+              },
+            })}
+          />
+        </Grid>
 
-        <TextField
-          label={
-            <FormattedMessage
-              defaultMessage="Middle name"
-              description="Middle name field"
-            />
-          }
-          {...register('middleName')}
-        />
+        <Grid xs={12} md={6}>
+          <Input
+            label={intl.formatMessage({
+              defaultMessage: 'Middle name',
+              description: 'Middle name field',
+            })}
+            width="100%"
+            {...register('middleName')}
+          />
+        </Grid>
 
-        <TextField
-          label={
-            <FormattedMessage
-              defaultMessage="First surname"
-              description="First surname field"
-            />
-          }
-          helperText={errors.firstSurname?.message}
-          error={!!errors.firstSurname}
-          {...register('firstSurname', {
-            required: {
-              value: true,
-              message: intl.formatMessage({
-                defaultMessage: 'Please enter a first surname',
-                description: 'Error message for first surname field',
-              }),
-            },
-          })}
-        />
+        <Grid xs={12} md={6}>
+          <Input
+            label={intl.formatMessage({
+              defaultMessage: 'First surname',
+              description: 'First surname field',
+            })}
+            helperText={errors.firstSurname?.message}
+            helperColor="error"
+            status={errors.firstSurname ? 'error' : 'default'}
+            width="100%"
+            {...register('firstSurname', {
+              required: {
+                value: true,
+                message: intl.formatMessage({
+                  defaultMessage: 'Please enter a first surname',
+                  description: 'Error message for first surname field',
+                }),
+              },
+            })}
+          />
+        </Grid>
 
-        <TextField
-          label={
-            <FormattedMessage
-              defaultMessage="Second surname"
-              description="Second surname field"
-            />
-          }
-          {...register('secondSurname')}
-        />
+        <Grid xs={12} md={6}>
+          <Input
+            label={intl.formatMessage({
+              defaultMessage: 'Second surname',
+              description: 'Second surname field',
+            })}
+            width="100%"
+            {...register('secondSurname')}
+          />
+        </Grid>
 
-        <TextField
-          label={
-            <FormattedMessage
-              defaultMessage="Email"
-              description="Email field"
-            />
-          }
-          error={!!errors.email}
-          helperText={errors.email?.message}
-          {...register('email', {
-            required: {
-              value: true,
-              message: intl.formatMessage({
-                defaultMessage: 'Please enter an email',
-                description: 'Error message for email field',
-              }),
-            },
-            pattern: {
-              value: /^\S+@\S+$/i,
-              message: intl.formatMessage({
-                defaultMessage: 'Please enter a valid email',
-                description: 'Error message for email field',
-              }),
-            },
-          })}
-        />
+        <Grid xs={12} md={6}>
+          <Input
+            label={intl.formatMessage({
+              defaultMessage: 'Email',
+              description: 'Email field',
+            })}
+            helperText={errors.email?.message}
+            helperColor="error"
+            status={errors.email ? 'error' : 'default'}
+            width="100%"
+            {...register('email', {
+              required: {
+                value: true,
+                message: intl.formatMessage({
+                  defaultMessage: 'Please enter an email',
+                  description: 'Error message for email field',
+                }),
+              },
+              pattern: {
+                value: /^\S+@\S+$/i,
+                message: intl.formatMessage({
+                  defaultMessage: 'Please enter a valid email',
+                  description: 'Error message for email field',
+                }),
+              },
+            })}
+          />
+        </Grid>
 
-        <TextField
-          label={
-            <FormattedMessage
-              defaultMessage="Phone number"
-              description="Phone number field"
-            />
-          }
-          helperText={errors.phoneNumber?.message}
-          error={!!errors.phoneNumber}
-          {...register('phoneNumber', {
-            required: {
-              value: true,
-              message: intl.formatMessage({
-                defaultMessage: 'Please enter a phone number',
-                description: 'Error message for phone number field',
-              }),
-            },
-            pattern: {
-              value: /^\+?[0-9]{10,15}$/i,
-              message: intl.formatMessage({
-                defaultMessage: 'Please enter a valid phone number',
-                description: 'Error message for phone number field',
-              }),
-            },
-          })}
-        />
+        <Grid xs={12} md={6}>
+          <Input
+            label={intl.formatMessage({
+              defaultMessage: 'Phone number',
+              description: 'Phone number field',
+            })}
+            helperText={errors.phoneNumber?.message}
+            helperColor="error"
+            status={errors.phoneNumber ? 'error' : 'default'}
+            width="100%"
+            {...register('phoneNumber', {
+              required: {
+                value: true,
+                message: intl.formatMessage({
+                  defaultMessage: 'Please enter a phone number',
+                  description: 'Error message for phone number field',
+                }),
+              },
+              pattern: {
+                value: /^\+?[0-9]{10,15}$/i,
+                message: intl.formatMessage({
+                  defaultMessage: 'Please enter a valid phone number',
+                  description: 'Error message for phone number field',
+                }),
+              },
+            })}
+          />
+        </Grid>
 
-        <FormControl>
-          <InputLabel id="employee-type">
+        <Spacer y={1} />
+        <Grid xs={12}>
+          <Text>
             <FormattedMessage
               defaultMessage="Employee type"
               description="Employee type field"
             />
-          </InputLabel>
-          <Select
-            labelId="employee-type"
-            label="Employee type"
-            {...register('type', {
-              required: {
-                value: true,
-                message: intl.formatMessage({
-                  defaultMessage: 'Please select an employee type',
-                  description: 'Error message for employee type field',
-                }),
-              },
-            })}
-          >
-            <MenuItem value={EmployeeType.Dispatcher}>Dispatcher</MenuItem>
-            <MenuItem value={EmployeeType.Driver}>Driver</MenuItem>
-            <MenuItem value={EmployeeType.Other}>Other</MenuItem>
-          </Select>
-          <FormHelperText>{errors.type?.message}</FormHelperText>
-        </FormControl>
+          </Text>
+          <Spacer y={0.5} />
+          <Radio.Group onChange={e => setValue('type', e as EmployeeType)} row>
+            <Radio value={EmployeeType.Driver} size="sm">
+              {intl.formatMessage({
+                defaultMessage: 'Driver',
+              })}
+            </Radio>
+            <Radio value={EmployeeType.Dispatcher} size="sm">
+              {intl.formatMessage({
+                defaultMessage: 'Dispatcher',
+              })}
+            </Radio>
+            <Radio value={EmployeeType.Other} size="sm">
+              {intl.formatMessage({
+                defaultMessage: 'Other',
+              })}
+            </Radio>
+          </Radio.Group>
+        </Grid>
+      </Grid.Container>
 
-        <Button
-          type="submit"
-          variant="contained"
-          color="primary"
-          sx={{ width: 'fit-content' }}
-        >
-          <FormattedMessage
-            defaultMessage="Create"
-            description="Create button"
-          />
-        </Button>
-      </Stack>
+      <Spacer y={1} />
+
+      <Button
+        type="submit"
+        color="primary"
+        disabled={isSubmitting}
+        size="lg"
+        shadow
+        rounded
+      >
+        <FormattedMessage defaultMessage="Create" description="Create button" />
+      </Button>
     </form>
   )
 }

@@ -1,4 +1,4 @@
-import { Card, CardContent, Container, Typography } from '@mui/material'
+import { Text } from '@nextui-org/react'
 import axios from 'axios'
 import useCompany from 'companies/hooks/useCompany'
 import EmployeeForm from 'employees/components/EmployeeForm'
@@ -22,10 +22,6 @@ const RegisterEmployee = () => {
     }
   })
 
-  if (loadingCompany) {
-    return <div>Loading...</div>
-  }
-
   const handleSubmit = async values => {
     await axios.post(
       `/api/employees/companies/${company?.id}/employees`,
@@ -44,17 +40,16 @@ const RegisterEmployee = () => {
         </title>
       </NextHead>
 
-      <Container maxWidth="md">
-        <Typography variant="h3" align="center" gutterBottom>
-          <FormattedMessage defaultMessage="Register employee" />
-        </Typography>
+      {loadingCompany && <div>Loading...</div>}
+      {!loadingCompany && (
+        <>
+          <Text h2>
+            <FormattedMessage defaultMessage="Register employee" />
+          </Text>
 
-        <Card sx={{ mt: 5 }}>
-          <CardContent>
-            <EmployeeForm onSubmit={handleSubmit} />
-          </CardContent>
-        </Card>
-      </Container>
+          <EmployeeForm onSubmit={handleSubmit} />
+        </>
+      )}
     </>
   )
 }
