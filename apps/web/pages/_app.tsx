@@ -1,6 +1,7 @@
 import '../styles/fonts.css'
 
 import { UserProvider } from '@auth0/nextjs-auth0'
+import { NextUIProvider } from '@nextui-org/react'
 import { CompanyProvider } from 'companies/context'
 import { NextComponentType, NextPage } from 'next'
 import type { AppProps } from 'next/app'
@@ -30,11 +31,13 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
     >
       <UserProvider>
         <ThemeConfig>
-          <CompanyProvider>
-            <Layout>
-              <Component {...pageProps} />
-            </Layout>
-          </CompanyProvider>
+          <NextUIProvider>
+            <CompanyProvider>
+              <Layout>
+                <Component {...pageProps} />
+              </Layout>
+            </CompanyProvider>
+          </NextUIProvider>
         </ThemeConfig>
       </UserProvider>
     </IntlProvider>

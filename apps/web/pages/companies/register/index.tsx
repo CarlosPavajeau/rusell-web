@@ -1,4 +1,4 @@
-import { Card, CardContent, Container, Typography } from '@mui/material'
+import { Card, Container, Spacer, Text } from '@nextui-org/react'
 import axios from 'axios'
 import { CompanyForm } from 'companies'
 import NextHead from 'next/head'
@@ -16,15 +16,21 @@ const RegisterCompany = () => {
       <NextHead>
         <title>Rusell | Register Company</title>
       </NextHead>
-      <Container maxWidth="md">
-        <Typography variant="h1" align="center" sx={{ mt: 10 }}>
-          Register Company
-        </Typography>
-
-        <Card sx={{ mt: 5 }}>
-          <CardContent>
-            <CompanyForm onSubmit={handleSubmit} />
-          </CardContent>
+      <Container
+        alignItems="center"
+        css={{
+          margin: 'auto',
+          display: 'flex',
+          minHeight: '100vh',
+          flexDirection: 'column',
+          justifyContent: 'center',
+        }}
+      >
+        <Card css={{ mw: '550px' }}>
+          <Text h1>Register Company</Text>
+          <Spacer y={2} />
+          <CompanyForm onSubmit={handleSubmit} />
+          <Spacer y={1} />
         </Card>
       </Container>
     </>
