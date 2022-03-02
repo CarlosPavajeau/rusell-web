@@ -1,15 +1,12 @@
 import { useUser } from '@auth0/nextjs-auth0'
 import { Box, Button, Link, Typography } from '@mui/material'
 import Head from 'next/head'
-import { useContext } from 'react'
 import { FormattedMessage } from 'react-intl'
 import DashboardLayout from 'ui/layouts/DashboardLayout'
-import ThemeContext from 'ui/theme/ThemeContext'
 import withAuthAndi18n from 'utils/withAuthAndi18n'
 
 const Web = () => {
   const { user, error, isLoading } = useUser()
-  const { toggleTheme, mode } = useContext(ThemeContext)
 
   if (isLoading) return <div>Loading...</div>
   if (error) return <div>{error.message}</div>
@@ -51,16 +48,6 @@ const Web = () => {
               </Link>
             </Button>
           )}
-        </Box>
-
-        <Box sx={{ my: 3 }}>
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={() => toggleTheme(mode === 'light' ? 'dark' : 'light')}
-          >
-            Toggle Theme
-          </Button>
         </Box>
       </Box>
     </>
