@@ -1,6 +1,5 @@
-import { Typography } from '@mui/material'
-import Card from '@mui/material/Card'
-import CardContent from '@mui/material/CardContent'
+import { Card, Spacer, Text } from '@nextui-org/react'
+import { FC } from 'react'
 
 import { Address } from '../models'
 
@@ -8,23 +7,22 @@ type Props = {
   address: Address
 }
 
-const AddressCard = (props: Props) => {
-  const { address } = props
-
+const AddressCard: FC<Props> = ({ address }) => {
   return (
-    <Card>
-      <CardContent>
-        <Typography variant="h6">
+    <Card css={{ minWidth: '300px' }}>
+      <Card.Body>
+        <Text h4>
           {address.country}, {address.state}, {address.city}
-        </Typography>
-        <Typography variant="body1">
-          {address.neighborhood}, {address.streetName} {address.intersection} #{' '}
+        </Text>
+        <Text>
+          {address.neighborhood}, {address.streetName} #{address.intersection} -{' '}
           {address.streetNumber}
-        </Typography>
-        <Typography color="text.secondary" variant="body2">
+        </Text>
+        <Spacer y={0.5} />
+        <Text small color="rgb(102, 102, 102)">
           {address.comments}
-        </Typography>
-      </CardContent>
+        </Text>
+      </Card.Body>
     </Card>
   )
 }

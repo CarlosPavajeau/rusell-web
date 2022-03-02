@@ -1,4 +1,4 @@
-import { Container, Stack, Typography } from '@mui/material'
+import { Container, Grid, Spacer, Text } from '@nextui-org/react'
 import AddressCard from 'addresses/components/AddressCard'
 import { Address } from 'addresses/models'
 import { fetcher } from 'core/http/fetcher'
@@ -14,10 +14,6 @@ const Addresses = () => {
   const intl = useIntl()
   const { data, isValidating } = useSWR<Address[]>('/api/addresses', fetcher)
 
-  if (isValidating) {
-    return <div>Loading...</div>
-  }
-
   return (
     <>
       <NextHead>
@@ -28,26 +24,27 @@ const Addresses = () => {
         </title>
       </NextHead>
 
-      <Typography variant="h3" align="center" sx={{ mb: 5 }}>
-        <FormattedMessage defaultMessage="Addresses" />
-      </Typography>
+      <Container md>
+        <Text h2>
+          <FormattedMessage defaultMessage="Addresses" />
+        </Text>
 
-      <Container maxWidth="md">
-        {data && data.length > 0 ? (
-          <Stack
-            spacing={2}
-            direction={{ xs: 'column', sm: 'row' }}
-            alignItems="center"
-            justifyContent="center"
-          >
+        <Spacer y={1} />
+
+        {isValidating && <div>Loading...</div>}
+
+        {!isValidating && data && data.length > 0 ? (
+          <Grid.Container gap={2}>
             {data.map(address => (
-              <AddressCard address={address} key={address.id} />
+              <Grid xs={12} md={6} key={address.id}>
+                <AddressCard address={address} />
+              </Grid>
             ))}
-          </Stack>
+          </Grid.Container>
         ) : (
-          <Typography variant="body1" align="center">
+          <Text h5>
             <FormattedMessage defaultMessage="No addresses found" />
-          </Typography>
+          </Text>
         )}
       </Container>
     </>
