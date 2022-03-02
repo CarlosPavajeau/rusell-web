@@ -1,4 +1,4 @@
-import { Card, Container, Spacer, Text } from '@nextui-org/react'
+import { Container, Spacer, Text } from '@nextui-org/react'
 import AddressForm from 'addresses/components/AddressForm'
 import axios from 'axios'
 import NextHead from 'next/head'
@@ -28,13 +28,11 @@ const RegisterAddress = () => {
         </title>
       </NextHead>
       <Container md>
-        <Card>
-          <Text h2>
-            <FormattedMessage defaultMessage="Register address" />
-          </Text>
-          <AddressForm onSubmit={handleSubmit} />
-          <Spacer y={1} />
-        </Card>
+        <Text h2>
+          <FormattedMessage defaultMessage="Register address" />
+        </Text>
+        <AddressForm onSubmit={handleSubmit} />
+        <Spacer y={1} />
       </Container>
     </>
   )
