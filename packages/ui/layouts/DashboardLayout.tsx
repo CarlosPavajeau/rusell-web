@@ -1,6 +1,7 @@
-import { styled } from '@mui/material'
-import { ReactNode, useState } from 'react'
+import { Col, Container, Row } from '@nextui-org/react'
+import { FC, ReactNode } from 'react'
 
+import Fixed from '../Fixed'
 import DashboardNavbar from './dashboard/navbar'
 import DashboardSidebar from './dashboard/sidebar'
 
@@ -8,41 +9,61 @@ type Props = {
   children: ReactNode
 }
 
-const APP_BAR_MOBILE = 64
-const APP_BAR_DESKTOP = 92
-
-const RootStyle = styled('div')({
-  display: 'flex',
-  minHeight: '100%',
-  overflow: 'hidden',
-})
-
-const MainStyle = styled('div')(({ theme }) => ({
-  flexGrow: 1,
-  overflow: 'auto',
-  minHeight: '100%',
-  paddingTop: APP_BAR_MOBILE + 24,
-  paddingBottom: theme.spacing(10),
-  [theme.breakpoints.up('lg')]: {
-    paddingTop: APP_BAR_DESKTOP + 24,
-    paddingLeft: theme.spacing(2),
-    paddingRight: theme.spacing(2),
-  },
-}))
-
-const DashboardLayout = (props: Props) => {
-  const { children } = props
-  const [mobileOpen, setMobileOpen] = useState(false)
-
+const DashboardLayout: FC<Props> = ({ children }) => {
   return (
-    <RootStyle>
-      <DashboardNavbar onOpenSidebar={() => setMobileOpen(true)} />
-      <DashboardSidebar
-        isOpen={mobileOpen}
-        onClose={() => setMobileOpen(false)}
-      />
-      <MainStyle>{children}</MainStyle>
-    </RootStyle>
+    <>
+      <DashboardNavbar />
+      <Container
+        lg={true}
+        as="main"
+        className="dashboard__container"
+        display="flex"
+        css={{ position: 'relative' }}
+      >
+        <Row
+          className="dashboard__content"
+          gap={0}
+          css={{
+            '@lg': {
+              pt: '1rem',
+            },
+          }}
+        >
+          <Col css={{ width: '32%' }}>
+            <Fixed
+              offset={92}
+              className="docs__left-sidebar"
+              css={{
+                maxHeight: 'calc(100vh - 4rem)',
+                overflow: 'auto',
+                display: 'none',
+                zIndex: '$2',
+                pb: '$28',
+                '&::-webkit-scrollbar': {
+                  width: '0px',
+                },
+                '@md': {
+                  display: 'block',
+                },
+              }}
+            >
+              <DashboardSidebar isOpen={false} onClose={() => {}} />
+            </Fixed>
+          </Col>
+          <Col
+            className="dashboard__center"
+            css={{
+              zIndex: '$10',
+              '@xsMax': {
+                p: 0,
+              },
+            }}
+          >
+            {children}
+          </Col>
+        </Row>
+      </Container>
+    </>
   )
 }
 

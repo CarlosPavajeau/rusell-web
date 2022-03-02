@@ -1,11 +1,11 @@
 import { useUser } from '@auth0/nextjs-auth0'
-import Avatar from '@mui/material/Avatar'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import Divider from '@mui/material/Divider'
 import IconButton from '@mui/material/IconButton'
 import Link from '@mui/material/Link'
 import Typography from '@mui/material/Typography'
+import { Avatar } from '@nextui-org/react'
 import { useRef, useState } from 'react'
 import { FormattedMessage } from 'react-intl'
 
@@ -39,9 +39,9 @@ const AccountPopover = () => {
         size="large"
       >
         <Avatar
+          pointer
           alt={user?.name || 'User Avatar'}
           src={user?.picture || ''}
-          sx={{ bgcolor: 'primary.main' }}
         />
       </IconButton>
 

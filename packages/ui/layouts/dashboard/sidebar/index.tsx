@@ -1,25 +1,13 @@
-import { Drawer, styled } from '@mui/material'
+import { Text } from '@nextui-org/react'
 import { useRouter } from 'next/router'
-import { useEffect } from 'react'
-
-import Hidden from '../../../Hidden'
+import { FC, useEffect } from 'react'
 
 type Props = {
   isOpen: boolean
   onClose: () => void
 }
 
-const DRAWER_WIDTH = 280
-
-const RootStyle = styled('div')(({ theme }) => ({
-  [theme.breakpoints.up('lg')]: {
-    width: DRAWER_WIDTH,
-    flexShrink: 0,
-  },
-}))
-
-const DashboardSidebar = (props: Props) => {
-  const { isOpen, onClose } = props
+const DashboardSidebar: FC<Props> = ({ isOpen, onClose }) => {
   const { pathname } = useRouter()
 
   useEffect(() => {
@@ -29,46 +17,10 @@ const DashboardSidebar = (props: Props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname])
 
-  const renderContent = () => {
-    return (
-      <div>
-        <h1>Dashboard</h1>
-      </div>
-    )
-  }
-
   return (
-    <RootStyle>
-      <Hidden width="lgUp">
-        <Drawer
-          open={isOpen}
-          onClose={onClose}
-          variant="persistent"
-          PaperProps={{
-            sx: {
-              width: DRAWER_WIDTH,
-            },
-          }}
-        >
-          {renderContent()}
-        </Drawer>
-      </Hidden>
-
-      <Hidden width="lgDown">
-        <Drawer
-          open
-          variant="persistent"
-          PaperProps={{
-            sx: {
-              width: DRAWER_WIDTH,
-              bgcolor: 'background.default',
-            },
-          }}
-        >
-          {renderContent()}
-        </Drawer>
-      </Hidden>
-    </RootStyle>
+    <>
+      <Text h1>Dashboard</Text>
+    </>
   )
 }
 

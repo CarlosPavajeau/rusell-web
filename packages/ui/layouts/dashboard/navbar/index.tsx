@@ -1,70 +1,102 @@
-import MenuIcon from '@mui/icons-material/Menu'
-import { alpha, styled } from '@mui/material'
-import AppBar from '@mui/material/AppBar'
-import Box from '@mui/material/Box'
-import IconButton from '@mui/material/IconButton'
-import Stack from '@mui/material/Stack'
-import Toolbar from '@mui/material/Toolbar'
+import { Col, Container, Row, Spacer, Text } from '@nextui-org/react'
+import cn from 'classnames'
+import { FC, useEffect, useState } from 'react'
 
-import Hidden from '../../../Hidden'
+import { useMediaQuery } from '../../../hooks/useMediaQuery'
 import ThemeToggle from '../../../theme/theme-toggle'
+import { StyledNavContainer } from '../../styles'
 import AccountPopover from './AccountPopover'
 
-const DRAWER_WIDTH = 280
-const APPBAR_MOBILE = 64
-const APPBAR_DESKTOP = 92
+const Navbar: FC = () => {
+  const [expanded, setExpanded] = useState(false)
+  const isMobile = useMediaQuery(960)
 
-const RootStyle = styled(AppBar)(({ theme }) => ({
-  boxShadow: 'none',
-  backdropFilter: 'blur(6px)',
-  webkitBackdropFilter: 'blur(6px)',
-  backgroundColor: alpha(theme.palette.background.default, 0.72),
-  [theme.breakpoints.up('lg')]: {
-    width: `calc(100% - ${DRAWER_WIDTH + 1}px)`,
-  },
-}))
+  useEffect(() => {
+    if (!isMobile) {
+      setExpanded(false)
+    }
+  }, [isMobile])
 
-const ToolbarStyle = styled(Toolbar)(({ theme }) => ({
-  minHeight: APPBAR_MOBILE,
-  [theme.breakpoints.up('lg')]: {
-    minHeight: APPBAR_DESKTOP,
-    padding: theme.spacing(0, 5),
-  },
-}))
-
-type Props = {
-  onOpenSidebar: () => void
-}
-
-const DashboardNavbar = (props: Props) => {
-  const { onOpenSidebar } = props
+  const showBlur = !!expanded
 
   return (
-    <RootStyle>
-      <ToolbarStyle>
-        <Hidden width="lgUp">
-          <IconButton
-            onClick={onOpenSidebar}
-            sx={{ mr: 1, color: 'text.primary' }}
-            size="large"
-          >
-            <MenuIcon />
-          </IconButton>
-        </Hidden>
-
-        <Box sx={{ flexGrow: 1 }} />
-
-        <Stack
-          direction="row"
-          alignItems="center"
-          spacing={{ xs: 0.5, sm: 1.5 }}
+    <StyledNavContainer showBlur={showBlur}>
+      <Container lg as="nav" display="flex" wrap="nowrap">
+        <Col
+          className="navbar__resources-container"
+          css={{
+            '@mdMax': {
+              width: '100%',
+            },
+          }}
         >
-          <ThemeToggle />
-          <AccountPopover />
-        </Stack>
-      </ToolbarStyle>
-    </RootStyle>
+          <Row
+            justify="flex-end"
+            align="center"
+            css={{
+              position: 'initial',
+              '@mdMax': {
+                jc: 'center',
+              },
+            }}
+          >
+            <Text
+              color="$text"
+              css={{ color: '$text' }}
+              className={cn('navbar__link')}
+            >
+              Hello
+            </Text>
+          </Row>
+        </Col>
+        <Col className="navbar__search-container">
+          <Row
+            className="navbar__search-row"
+            justify="flex-end"
+            align="center"
+            css={{
+              position: 'initial',
+              '@mdMax': {
+                jc: 'center',
+              },
+            }}
+          >
+            <Row
+              className="navbar__social-icons-container"
+              justify="flex-end"
+              align="center"
+              gap={1}
+              css={{
+                width: 'initial',
+                '@mdMax': {
+                  d: 'none',
+                },
+              }}
+            >
+              <ThemeToggle
+                className="navbar__social-icon"
+                css={{
+                  m: '0 6px',
+                  '& svg': {
+                    transition: '$default',
+                  },
+                  '&:hover': {
+                    '& svg': {
+                      opacity: 0.7,
+                    },
+                  },
+                }}
+              />
+
+              <Spacer x={1} y={0} />
+
+              <AccountPopover />
+            </Row>
+          </Row>
+        </Col>
+      </Container>
+    </StyledNavContainer>
   )
 }
 
-export default DashboardNavbar
+export default Navbar
