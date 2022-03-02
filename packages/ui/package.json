@@ -6,7 +6,7 @@
   "license": "MIT",
   "devDependencies": {
     "@auth0/nextjs-auth0": "^1.7.0",
-    "@emotion/react": "^11.7.1",
+    "@emotion/react": "^11.8.1",
     "@emotion/styled": "^11.6.0",
     "@mui/icons-material": "^5.4.1",
     "@mui/material": "^5.4.0",
