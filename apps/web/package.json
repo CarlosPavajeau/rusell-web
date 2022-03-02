@@ -32,7 +32,7 @@
     "@types/react": "17.0.37",
     "babel-plugin-formatjs": "^10.3.18",
     "config": "*",
-    "eslint": "7.32.0",
+    "eslint": "8.10.0",
     "next-transpile-modules": "9.0.0",
     "tsconfig": "*",
     "typescript": "^4.5.3"
