@@ -1,20 +1,30 @@
-import { Card, Container, Spacer, Text } from '@nextui-org/react'
+import { Container, Spacer, Text } from '@nextui-org/react'
 import axios from 'axios'
 import { CompanyForm } from 'companies'
 import NextHead from 'next/head'
+import { useRouter } from 'next/router'
+import { FormattedMessage, useIntl } from 'react-intl'
 import withAuthAndi18n from 'utils/withAuthAndi18n'
 
 export const getServerSideProps = withAuthAndi18n
 
 const RegisterCompany = () => {
+  const router = useRouter()
+  const intl = useIntl()
+
   const handleSubmit = async values => {
     await axios.post('/api/companies', values)
+    await router.push('/')
   }
 
   return (
     <>
       <NextHead>
-        <title>Rusell | Register Company</title>
+        <title>
+          {intl.formatMessage({
+            defaultMessage: 'Register company',
+          })}
+        </title>
       </NextHead>
       <Container
         alignItems="center"
@@ -26,12 +36,15 @@ const RegisterCompany = () => {
           justifyContent: 'center',
         }}
       >
-        <Card css={{ mw: '550px' }}>
-          <Text h1>Register Company</Text>
-          <Spacer y={2} />
-          <CompanyForm onSubmit={handleSubmit} />
+        <Container xs>
+          <Text h3>
+            <FormattedMessage defaultMessage="Register company" />
+          </Text>
+
           <Spacer y={1} />
-        </Card>
+
+          <CompanyForm onSubmit={handleSubmit} />
+        </Container>
       </Container>
     </>
   )
