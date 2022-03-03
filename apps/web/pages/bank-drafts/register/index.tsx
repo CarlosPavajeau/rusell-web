@@ -1,7 +1,4 @@
-import Card from '@mui/material/Card'
-import CardContent from '@mui/material/CardContent'
-import Container from '@mui/material/Container'
-import Typography from '@mui/material/Typography'
+import { Container, Spacer, Text } from '@nextui-org/react'
 import axios from 'axios'
 import BankDraftForm from 'bank-drafts/components/BankDraftForm'
 import useCompany from 'companies/hooks/useCompany'
@@ -46,20 +43,18 @@ const RegisterBankDraft = () => {
       {loadingCompany && <div>Loading...</div>}
 
       {company && (
-        <Container maxWidth="md">
-          <Typography variant="h3" align="center" gutterBottom>
+        <Container md>
+          <Text h2>
             <FormattedMessage defaultMessage="Register bank draft" />
-          </Typography>
+          </Text>
 
-          <Card sx={{ mt: 5 }}>
-            <CardContent>
-              <BankDraftForm
-                onSubmit={handleSubmit}
-                clients={[]}
-                dispatcherId="123"
-              />
-            </CardContent>
-          </Card>
+          <Spacer y={1} />
+
+          <BankDraftForm
+            onSubmit={handleSubmit}
+            clients={[]}
+            dispatcherId="123"
+          />
         </Container>
       )}
     </>
