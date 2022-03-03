@@ -31,8 +31,10 @@ const RegisterAddress = () => {
         <Text h2>
           <FormattedMessage defaultMessage="Register address" />
         </Text>
-        <AddressForm onSubmit={handleSubmit} />
+
         <Spacer y={1} />
+
+        <AddressForm onSubmit={handleSubmit} />
       </Container>
     </>
   )
