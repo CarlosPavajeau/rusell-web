@@ -1,31 +1,50 @@
-import { Card, CardContent, Container, Typography } from '@mui/material'
+import { Container, Spacer, Text } from '@nextui-org/react'
 import axios from 'axios'
 import ClientForm from 'clients/components/ClientForm'
 import NextHead from 'next/head'
+import { useRouter } from 'next/router'
+import { FormattedMessage, useIntl } from 'react-intl'
 import withAuthAndi18n from 'utils/withAuthAndi18n'
 
 export const getServerSideProps = withAuthAndi18n
 
 const RegisterClient = () => {
+  const router = useRouter()
+  const intl = useIntl()
+
   const handleSubmit = async values => {
     await axios.post('/api/clients', values)
+    await router.push('/')
   }
 
   return (
     <>
       <NextHead>
-        <title>Rusell | Register Client</title>
+        <title>
+          {intl.formatMessage({
+            defaultMessage: 'Register client',
+          })}
+        </title>
       </NextHead>
-      <Container maxWidth="md">
-        <Typography variant="h1" align="center" sx={{ mt: 10 }}>
-          Register Client
-        </Typography>
+      <Container
+        alignItems="center"
+        css={{
+          margin: 'auto',
+          display: 'flex',
+          minHeight: '100vh',
+          flexDirection: 'column',
+          justifyContent: 'center',
+        }}
+      >
+        <Container sm>
+          <Text h3>
+            <FormattedMessage defaultMessage="Register client" />
+          </Text>
 
-        <Card sx={{ mt: 5 }}>
-          <CardContent>
-            <ClientForm onSubmit={handleSubmit} />
-          </CardContent>
-        </Card>
+          <Spacer y={1} />
+
+          <ClientForm onSubmit={handleSubmit} />
+        </Container>
       </Container>
     </>
   )

@@ -1,6 +1,4 @@
-import Button from '@mui/material/Button'
-import Stack from '@mui/material/Stack'
-import TextField from '@mui/material/TextField'
+import { Button, Grid, Input, Spacer } from '@nextui-org/react'
 import { useForm } from 'react-hook-form'
 import { FormattedMessage, useIntl } from 'react-intl'
 
@@ -16,123 +14,142 @@ const ClientForm = (props: Props) => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm<CreateClientRequest>()
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <Stack spacing={3}>
-        <TextField
-          label={
-            <FormattedMessage defaultMessage="Id" description="Id field" />
-          }
-          helperText={errors?.id?.message}
-          error={!!errors.id}
-          {...register('id', {
-            required: {
-              value: true,
-              message: intl.formatMessage({
-                defaultMessage: 'Please enter an id',
-                description: 'Error message for id field',
-              }),
-            },
-          })}
-        />
-
-        <TextField
-          label={
-            <FormattedMessage
-              defaultMessage="First name"
-              description="First name field"
-            />
-          }
-          helperText={errors?.firstName?.message}
-          error={!!errors.firstName}
-          {...register('firstName', {
-            required: {
-              value: true,
-              message: intl.formatMessage({
-                defaultMessage: 'Please enter a first name',
-                description: 'Error message for first name field',
-              }),
-            },
-          })}
-        />
-
-        <TextField
-          label={
-            <FormattedMessage
-              defaultMessage="Middle name"
-              description="Middle name field"
-            />
-          }
-          error={!!errors.middleName}
-          {...register('middleName')}
-        />
-
-        <TextField
-          label={
-            <FormattedMessage
-              defaultMessage="First surname"
-              description="First surname field"
-            />
-          }
-          helperText={errors?.firstSurname?.message}
-          error={!!errors.firstSurname}
-          {...register('firstSurname', {
-            required: {
-              value: true,
-              message: intl.formatMessage({
-                defaultMessage: 'Please enter a first surname',
-                description: 'Error message for first surname field',
-              }),
-            },
-          })}
-        />
-
-        <TextField
-          label={
-            <FormattedMessage
-              defaultMessage="Second surname"
-              description="Second surname field"
-            />
-          }
-          error={!!errors.secondSurname}
-          {...register('secondSurname')}
-        />
-
-        <TextField
-          label={
-            <FormattedMessage
-              defaultMessage="Phone number"
-              description="Phone number field"
-            />
-          }
-          helperText={errors?.phoneNumber?.message}
-          error={!!errors.phoneNumber}
-          {...register('phoneNumber', {
-            required: {
-              value: true,
-              message: intl.formatMessage({
-                defaultMessage: 'Please enter a phone number',
-                description: 'Error message for phone number field',
-              }),
-            },
-          })}
-        />
-
-        <Button
-          type="submit"
-          variant="contained"
-          color="primary"
-          sx={{ width: 'fit-content' }}
-        >
-          <FormattedMessage
-            defaultMessage="Submit"
-            description="Submit button"
+      <Grid.Container gap={2}>
+        <Grid xs={12}>
+          <Input
+            label={intl.formatMessage({
+              defaultMessage: 'Id',
+              description: 'Id field',
+            })}
+            helperText={errors?.id?.message}
+            helperColor="error"
+            status={errors.id ? 'error' : 'default'}
+            width="100%"
+            {...register('id', {
+              required: {
+                value: true,
+                message: intl.formatMessage({
+                  defaultMessage: 'Please enter an id',
+                  description: 'Error message for id field',
+                }),
+              },
+            })}
           />
-        </Button>
-      </Stack>
+        </Grid>
+
+        <Grid xs={12} md={6}>
+          <Input
+            label={intl.formatMessage({
+              defaultMessage: 'First name',
+              description: 'First name field',
+            })}
+            helperText={errors.firstName?.message}
+            helperColor="error"
+            status={errors.firstName ? 'error' : 'default'}
+            width="100%"
+            {...register('firstName', {
+              required: {
+                value: true,
+                message: intl.formatMessage({
+                  defaultMessage: 'Please enter a first name',
+                  description: 'Error message for first name field',
+                }),
+              },
+            })}
+          />
+        </Grid>
+
+        <Grid xs={12} md={6}>
+          <Input
+            label={intl.formatMessage({
+              defaultMessage: 'Middle name',
+              description: 'Middle name field',
+            })}
+            width="100%"
+            {...register('middleName')}
+          />
+        </Grid>
+
+        <Grid xs={12} md={6}>
+          <Input
+            label={intl.formatMessage({
+              defaultMessage: 'First surname',
+              description: 'First surname field',
+            })}
+            helperText={errors.firstSurname?.message}
+            helperColor="error"
+            status={errors.firstSurname ? 'error' : 'default'}
+            width="100%"
+            {...register('firstSurname', {
+              required: {
+                value: true,
+                message: intl.formatMessage({
+                  defaultMessage: 'Please enter a first surname',
+                  description: 'Error message for first surname field',
+                }),
+              },
+            })}
+          />
+        </Grid>
+
+        <Grid xs={12} md={6}>
+          <Input
+            label={intl.formatMessage({
+              defaultMessage: 'Second surname',
+              description: 'Second surname field',
+            })}
+            width="100%"
+            {...register('secondSurname')}
+          />
+        </Grid>
+
+        <Grid xs={12}>
+          <Input
+            label={intl.formatMessage({
+              defaultMessage: 'Phone number',
+              description: 'Phone number field',
+            })}
+            helperText={errors.phoneNumber?.message}
+            helperColor="error"
+            status={errors.phoneNumber ? 'error' : 'default'}
+            width="100%"
+            {...register('phoneNumber', {
+              required: {
+                value: true,
+                message: intl.formatMessage({
+                  defaultMessage: 'Please enter a phone number',
+                  description: 'Error message for phone number field',
+                }),
+              },
+              pattern: {
+                value: /^\+?[0-9]{10,15}$/i,
+                message: intl.formatMessage({
+                  defaultMessage: 'Please enter a valid phone number',
+                  description: 'Error message for phone number field',
+                }),
+              },
+            })}
+          />
+        </Grid>
+      </Grid.Container>
+
+      <Spacer y={1} />
+
+      <Button
+        disabled={isSubmitting}
+        type="submit"
+        color="primary"
+        size="lg"
+        shadow
+        rounded
+      >
+        <FormattedMessage defaultMessage="Submit" description="Submit button" />
+      </Button>
     </form>
   )
 }
