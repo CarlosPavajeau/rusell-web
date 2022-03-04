@@ -1,7 +1,4 @@
-import Card from '@mui/material/Card'
-import CardContent from '@mui/material/CardContent'
-import Container from '@mui/material/Container'
-import Typography from '@mui/material/Typography'
+import { Container, Spacer, Text } from '@nextui-org/react'
 import axios from 'axios'
 import useCompany from 'companies/hooks/useCompany'
 import { fetcher } from 'core/http/fetcher'
@@ -51,21 +48,19 @@ const RegisterParcel = () => {
       {(loadingCompany || loadingVehicles) && <div>Loading...</div>}
 
       {company && vehicles && vehicles.length > 0 && (
-        <Container maxWidth="md">
-          <Typography variant="h3" align="center" gutterBottom>
+        <Container sm>
+          <Text h3>
             <FormattedMessage defaultMessage="Register parcel" />
-          </Typography>
+          </Text>
 
-          <Card sx={{ mt: 5 }}>
-            <CardContent>
-              <ParcelForm
-                onSubmit={handleSubmit}
-                clients={[]}
-                vehicles={vehicles}
-                dispatcherId="123"
-              />
-            </CardContent>
-          </Card>
+          <Spacer y={1} />
+
+          <ParcelForm
+            onSubmit={handleSubmit}
+            clients={[]}
+            vehicles={vehicles}
+            dispatcherId="123"
+          />
         </Container>
       )}
     </>
