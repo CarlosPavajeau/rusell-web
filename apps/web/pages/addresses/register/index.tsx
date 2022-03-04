@@ -1,5 +1,5 @@
 import { Container, Spacer, Text } from '@nextui-org/react'
-import AddressForm from 'addresses/components/AddressForm'
+import AddressForm from 'addresses/components/form'
 import axios from 'axios'
 import NextHead from 'next/head'
 import { useRouter } from 'next/router'
