@@ -1,7 +1,4 @@
-import Card from '@mui/material/Card'
-import CardContent from '@mui/material/CardContent'
-import Container from '@mui/material/Container'
-import Typography from '@mui/material/Typography'
+import { Container, Spacer, Text } from '@nextui-org/react'
 import { Addresses } from 'addresses/models'
 import axios from 'axios'
 import useCompany from 'companies/hooks/useCompany'
@@ -51,16 +48,14 @@ const RegisterRoute = () => {
       {(loadingCompany || loadingAddresses) && <div>Loading...</div>}
 
       {company && addresses && addresses.length > 0 && (
-        <Container maxWidth="md">
-          <Typography variant="h3" align="center" gutterBottom>
+        <Container sm>
+          <Text h3>
             <FormattedMessage defaultMessage="Register route" />
-          </Typography>
+          </Text>
 
-          <Card sx={{ mt: 5 }}>
-            <CardContent>
-              <RouteForm onSubmit={handleSubmit} addresses={addresses} />
-            </CardContent>
-          </Card>
+          <Spacer y={1} />
+
+          <RouteForm onSubmit={handleSubmit} addresses={addresses} />
         </Container>
       )}
     </>
