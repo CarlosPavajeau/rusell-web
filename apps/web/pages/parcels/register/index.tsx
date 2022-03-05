@@ -1,7 +1,7 @@
 import { Container, Spacer, Text } from '@nextui-org/react'
 import useCompany from '@rusell/companies/hooks/useCompany'
 import { fetcher } from '@rusell/core/http/fetcher'
-import ParcelForm from '@rusell/parcels/components/ParcelForm'
+import ParcelForm from '@rusell/parcels/components/form'
 import DashboardLayout from '@rusell/ui/layouts/DashboardLayout'
 import { Vehicles } from '@rusell/vehicles/models'
 import axios from 'axios'
@@ -55,12 +55,7 @@ const RegisterParcel = () => {
 
           <Spacer y={1} />
 
-          <ParcelForm
-            onSubmit={handleSubmit}
-            clients={[]}
-            vehicles={vehicles}
-            dispatcherId="123"
-          />
+          <ParcelForm onSubmit={handleSubmit} />
         </Container>
       )}
     </>
