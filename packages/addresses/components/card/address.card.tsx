@@ -1,7 +1,7 @@
 import { Card, Spacer, Text } from '@nextui-org/react'
 import { FC } from 'react'
 
-import { Address } from '../models'
+import { Address } from '../../models'
 
 type Props = {
   address: Address

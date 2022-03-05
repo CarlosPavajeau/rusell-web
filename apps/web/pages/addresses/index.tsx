@@ -1,5 +1,5 @@
 import { Container, Grid, Spacer, Text } from '@nextui-org/react'
-import AddressCard from 'addresses/components/AddressCard'
+import AddressCard from 'addresses/components/card'
 import { Address } from 'addresses/models'
 import { fetcher } from 'core/http/fetcher'
 import NextHead from 'next/head'
