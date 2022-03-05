@@ -1,6 +1,6 @@
 import { Text } from '@nextui-org/react'
 import useCompany from '@rusell/companies/hooks/useCompany'
-import EmployeeForm from '@rusell/employees/components/EmployeeForm'
+import EmployeeForm from '@rusell/employees/components/form'
 import DashboardLayout from '@rusell/ui/layouts/DashboardLayout'
 import axios from 'axios'
 import NextHead from 'next/head'
