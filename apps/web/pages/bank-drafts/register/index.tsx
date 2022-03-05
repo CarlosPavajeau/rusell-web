@@ -1,6 +1,6 @@
 import { Container, Spacer, Text } from '@nextui-org/react'
 import axios from 'axios'
-import BankDraftForm from 'bank-drafts/components/BankDraftForm'
+import BankDraftForm from 'bank-drafts/components/form'
 import useCompany from 'companies/hooks/useCompany'
 import NextHead from 'next/head'
 import { useRouter } from 'next/router'
@@ -50,11 +50,7 @@ const RegisterBankDraft = () => {
 
           <Spacer y={1} />
 
-          <BankDraftForm
-            onSubmit={handleSubmit}
-            clients={[]}
-            dispatcherId="123"
-          />
+          <BankDraftForm onSubmit={handleSubmit} />
         </Container>
       )}
     </>
