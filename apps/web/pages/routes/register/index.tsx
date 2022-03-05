@@ -1,15 +1,12 @@
 import { Container, Spacer, Text } from '@nextui-org/react'
-import { Addresses } from '@rusell/addresses/models'
 import useCompany from '@rusell/companies/hooks/useCompany'
-import { fetcher } from '@rusell/core/http/fetcher'
-import RouteForm from '@rusell/routes/components/RouteForm'
+import RouteForm from '@rusell/routes/components/form'
 import DashboardLayout from '@rusell/ui/layouts/DashboardLayout'
 import axios from 'axios'
 import NextHead from 'next/head'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 import { FormattedMessage, useIntl } from 'react-intl'
-import useSWR from 'swr'
 import withAuthAndi18n from 'utils/withAuthAndi18n'
 
 export const getServerSideProps = withAuthAndi18n
@@ -24,11 +21,6 @@ const RegisterRoute = () => {
       router.push('/companies/register')
     }
   }, [companyError, router])
-
-  const { data: addresses, isValidating: loadingAddresses } = useSWR<Addresses>(
-    '/api/addresses',
-    fetcher,
-  )
 
   const handleSubmit = async values => {
     await axios.post(`/api/routes/companies/${company.id}/routes`, values)
@@ -45,9 +37,9 @@ const RegisterRoute = () => {
         </title>
       </NextHead>
 
-      {(loadingCompany || loadingAddresses) && <div>Loading...</div>}
+      {loadingCompany && <div>Loading...</div>}
 
-      {company && addresses && addresses.length > 0 && (
+      {company && (
         <Container sm>
           <Text h3>
             <FormattedMessage defaultMessage="Register route" />
@@ -55,7 +47,7 @@ const RegisterRoute = () => {
 
           <Spacer y={1} />
 
-          <RouteForm onSubmit={handleSubmit} addresses={addresses} />
+          <RouteForm onSubmit={handleSubmit} />
         </Container>
       )}
     </>
