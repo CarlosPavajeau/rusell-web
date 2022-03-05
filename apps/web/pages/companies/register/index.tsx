@@ -1,5 +1,5 @@
 import { Container, Spacer, Text } from '@nextui-org/react'
-import { CompanyForm } from '@rusell/companies'
+import CompanyForm from '@rusell/companies/components/form'
 import axios from 'axios'
 import NextHead from 'next/head'
 import { useRouter } from 'next/router'
