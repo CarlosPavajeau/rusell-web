@@ -2,14 +2,14 @@ import '../styles/fonts.css'
 
 import { UserProvider } from '@auth0/nextjs-auth0'
 import { NextUIProvider } from '@nextui-org/react'
-import { CompanyProvider } from 'companies/context'
+import { CompanyProvider } from '@rusell/companies/context'
+import DefaultLayout from '@rusell/ui/layouts/DefaultLayout'
+import { darkTheme, lightTheme } from '@rusell/ui/theme/shared'
 import { NextComponentType, NextPage } from 'next'
 import type { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
 import { ThemeProvider as NextThemesProvider } from 'next-themes'
 import { IntlProvider } from 'react-intl'
-import DefaultLayout from 'ui/layouts/DefaultLayout'
-import { darkTheme, lightTheme } from 'ui/theme/shared'
 
 type NextPageWithLayout = NextPage & {
   Layout?: NextComponentType

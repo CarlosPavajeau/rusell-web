@@ -1,16 +1,16 @@
 import { Spacer, Text } from '@nextui-org/react'
+import useCompany from '@rusell/companies/hooks/useCompany'
+import { fetcher } from '@rusell/core/http/fetcher'
+import { Employees, EmployeeType } from '@rusell/employees/models'
+import DashboardLayout from '@rusell/ui/layouts/DashboardLayout'
+import VehicleForm from '@rusell/vehicles/components/VehicleForm'
 import axios from 'axios'
-import useCompany from 'companies/hooks/useCompany'
-import { fetcher } from 'core/http/fetcher'
-import { Employees, EmployeeType } from 'employees/models'
 import NextHead from 'next/head'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 import { FormattedMessage, useIntl } from 'react-intl'
 import useSWR from 'swr'
-import DashboardLayout from 'ui/layouts/DashboardLayout'
 import withAuthAndi18n from 'utils/withAuthAndi18n'
-import VehicleForm from 'vehicles/components/VehicleForm'
 
 export const getServerSideProps = withAuthAndi18n
 

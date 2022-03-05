@@ -1,16 +1,16 @@
 import { Container, Spacer, Text } from '@nextui-org/react'
+import useCompany from '@rusell/companies/hooks/useCompany'
+import { fetcher } from '@rusell/core/http/fetcher'
+import ParcelForm from '@rusell/parcels/components/ParcelForm'
+import DashboardLayout from '@rusell/ui/layouts/DashboardLayout'
+import { Vehicles } from '@rusell/vehicles/models'
 import axios from 'axios'
-import useCompany from 'companies/hooks/useCompany'
-import { fetcher } from 'core/http/fetcher'
 import NextHead from 'next/head'
 import { useRouter } from 'next/router'
-import ParcelForm from 'parcels/components/ParcelForm'
 import { useEffect } from 'react'
 import { FormattedMessage, useIntl } from 'react-intl'
 import useSWR from 'swr'
-import DashboardLayout from 'ui/layouts/DashboardLayout'
 import withAuthAndi18n from 'utils/withAuthAndi18n'
-import { Vehicles } from 'vehicles/models'
 
 export const getServerSideProps = withAuthAndi18n
 

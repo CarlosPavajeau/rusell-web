@@ -1,4 +1,4 @@
-import { http } from 'core/http'
+import { http } from '@rusell/core/http'
 
 import { CreateEmployeeRequest, Employees, EmployeeType } from '../models'
 

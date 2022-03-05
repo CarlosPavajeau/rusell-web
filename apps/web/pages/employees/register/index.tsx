@@ -1,12 +1,12 @@
 import { Text } from '@nextui-org/react'
+import useCompany from '@rusell/companies/hooks/useCompany'
+import EmployeeForm from '@rusell/employees/components/EmployeeForm'
+import DashboardLayout from '@rusell/ui/layouts/DashboardLayout'
 import axios from 'axios'
-import useCompany from 'companies/hooks/useCompany'
-import EmployeeForm from 'employees/components/EmployeeForm'
 import NextHead from 'next/head'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 import { FormattedMessage, useIntl } from 'react-intl'
-import DashboardLayout from 'ui/layouts/DashboardLayout'
 import withAuthAndi18n from 'utils/withAuthAndi18n'
 
 export const getServerSideProps = withAuthAndi18n

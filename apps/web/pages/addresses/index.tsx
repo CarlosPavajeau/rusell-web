@@ -1,11 +1,11 @@
 import { Container, Grid, Spacer, Text } from '@nextui-org/react'
-import AddressCard from 'addresses/components/card'
-import { Address } from 'addresses/models'
-import { fetcher } from 'core/http/fetcher'
+import AddressCard from '@rusell/addresses/components/card'
+import { Address } from '@rusell/addresses/models'
+import { fetcher } from '@rusell/core/http/fetcher'
+import DashboardLayout from '@rusell/ui/layouts/DashboardLayout'
 import NextHead from 'next/head'
 import { FormattedMessage, useIntl } from 'react-intl'
 import useSWR from 'swr'
-import DashboardLayout from 'ui/layouts/DashboardLayout'
 import withAuthAndi18n from 'utils/withAuthAndi18n'
 
 export const getServerSideProps = withAuthAndi18n

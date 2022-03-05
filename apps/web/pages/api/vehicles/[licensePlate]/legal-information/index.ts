@@ -1,7 +1,7 @@
 import { withApiAuthRequired } from '@auth0/nextjs-auth0'
+import { VehiclesService } from '@rusell/vehicles/service'
 import { NextApiRequest, NextApiResponse } from 'next'
 import withBearerToken from 'utils/auth0/withBearerToken'
-import { VehiclesService } from 'vehicles/service'
 
 const handler = async (request: NextApiRequest, response: NextApiResponse) => {
   const { licensePlate } = request.query

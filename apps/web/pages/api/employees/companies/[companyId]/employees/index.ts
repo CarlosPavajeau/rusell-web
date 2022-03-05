@@ -1,5 +1,5 @@
 import { withApiAuthRequired } from '@auth0/nextjs-auth0'
-import { EmployeeService } from 'employees/service'
+import { EmployeeService } from '@rusell/employees/service'
 import { NextApiRequest, NextApiResponse } from 'next'
 import withBearerToken from 'utils/auth0/withBearerToken'
 

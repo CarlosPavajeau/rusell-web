@@ -1,13 +1,13 @@
 import { Typography } from '@mui/material'
-import useCompany from 'companies/hooks/useCompany'
-import { fetcher } from 'core/http/fetcher'
+import useCompany from '@rusell/companies/hooks/useCompany'
+import { fetcher } from '@rusell/core/http/fetcher'
+import { Route } from '@rusell/routes/models'
+import DashboardLayout from '@rusell/ui/layouts/DashboardLayout'
 import NextHead from 'next/head'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 import { FormattedMessage, useIntl } from 'react-intl'
-import { Route } from 'routes/models'
 import useSWR from 'swr'
-import DashboardLayout from 'ui/layouts/DashboardLayout'
 import withAuthAndi18n from 'utils/withAuthAndi18n'
 
 export const getServerSideProps = withAuthAndi18n

@@ -1,6 +1,6 @@
 import { withApiAuthRequired } from '@auth0/nextjs-auth0'
+import { TransportSheetsService } from '@rusell/transport-sheets/service'
 import { NextApiRequest, NextApiResponse } from 'next'
-import { TransportSheetsService } from 'transport-sheets/service'
 import withBearerToken from 'utils/auth0/withBearerToken'
 
 const handler = async (request: NextApiRequest, response: NextApiResponse) => {

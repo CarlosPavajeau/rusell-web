@@ -1,5 +1,5 @@
 import { getAccessToken } from '@auth0/nextjs-auth0'
-import { http } from 'core/http'
+import { http } from '@rusell/core/http'
 import { NextApiHandler, NextApiRequest, NextApiResponse } from 'next'
 
 const withBearerToken =

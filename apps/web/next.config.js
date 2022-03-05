@@ -1,17 +1,17 @@
 // @ts-check
 const withTM = require('next-transpile-modules')([
-  'core',
-  'ui',
-  'addresses',
-  'bank-drafts',
-  'clients',
-  'companies',
-  'employees',
-  'parcels',
-  'routes',
-  'tickets',
-  'transport-sheets',
-  'vehicles',
+  '@rusell/core',
+  '@rusell/ui',
+  '@rusell/addresses',
+  '@rusell/bank-drafts',
+  '@rusell/clients',
+  '@rusell/companies',
+  '@rusell/employees',
+  '@rusell/parcels',
+  '@rusell/routes',
+  '@rusell/tickets',
+  '@rusell/transport-sheets',
+  '@rusell/vehicles',
 ])
 
 /**

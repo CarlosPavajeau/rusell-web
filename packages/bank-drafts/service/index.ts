@@ -1,4 +1,4 @@
-import { http } from 'core/http'
+import { http } from '@rusell/core/http'
 
 import { BankDrafts, BankDraftState, CreateBankDraftRequest } from '../models'
 

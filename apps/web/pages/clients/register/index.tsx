@@ -1,6 +1,6 @@
 import { Container, Spacer, Text } from '@nextui-org/react'
+import ClientForm from '@rusell/clients/components/form'
 import axios from 'axios'
-import ClientForm from 'clients/components/form'
 import NextHead from 'next/head'
 import { useRouter } from 'next/router'
 import { FormattedMessage, useIntl } from 'react-intl'

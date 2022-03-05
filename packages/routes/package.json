@@ -1,5 +1,5 @@
 {
-  "name": "routes",
+  "name": "@rusell/routes",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",

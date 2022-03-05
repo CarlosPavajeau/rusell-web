@@ -1,6 +1,6 @@
 import { withApiAuthRequired } from '@auth0/nextjs-auth0'
+import { RoutesService } from '@rusell/routes/service'
 import { NextApiRequest, NextApiResponse } from 'next'
-import { RoutesService } from 'routes/service'
 import withBearerToken from 'utils/auth0/withBearerToken'
 
 const handler = async (request: NextApiRequest, response: NextApiResponse) => {

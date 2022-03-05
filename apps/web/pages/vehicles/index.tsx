@@ -1,15 +1,15 @@
 import { Typography } from '@mui/material'
-import useCompany from 'companies/hooks/useCompany'
-import { fetcher } from 'core/http/fetcher'
+import useCompany from '@rusell/companies/hooks/useCompany'
+import { fetcher } from '@rusell/core/http/fetcher'
+import DashboardLayout from '@rusell/ui/layouts/DashboardLayout'
+import VehiclesTable from '@rusell/vehicles/components/VehiclesTable'
+import { Vehicle } from '@rusell/vehicles/models'
 import NextHead from 'next/head'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 import { FormattedMessage, useIntl } from 'react-intl'
 import useSWR from 'swr'
-import DashboardLayout from 'ui/layouts/DashboardLayout'
 import withAuthAndi18n from 'utils/withAuthAndi18n'
-import VehiclesTable from 'vehicles/components/VehiclesTable'
-import { Vehicle } from 'vehicles/models'
 
 export const getServerSideProps = withAuthAndi18n
 

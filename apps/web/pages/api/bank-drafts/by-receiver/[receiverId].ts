@@ -1,6 +1,6 @@
 import { withApiAuthRequired } from '@auth0/nextjs-auth0'
-import { BankDraftState } from 'bank-drafts/models'
-import { BankDraftsService } from 'bank-drafts/service'
+import { BankDraftState } from '@rusell/bank-drafts/models'
+import { BankDraftsService } from '@rusell/bank-drafts/service'
 import { NextApiRequest, NextApiResponse } from 'next'
 import withBearerToken from 'utils/auth0/withBearerToken'
 

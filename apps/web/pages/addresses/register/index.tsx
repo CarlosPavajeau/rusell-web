@@ -1,10 +1,10 @@
 import { Container, Spacer, Text } from '@nextui-org/react'
-import AddressForm from 'addresses/components/form'
+import AddressForm from '@rusell/addresses/components/form'
+import DashboardLayout from '@rusell/ui/layouts/DashboardLayout'
 import axios from 'axios'
 import NextHead from 'next/head'
 import { useRouter } from 'next/router'
 import { FormattedMessage, useIntl } from 'react-intl'
-import DashboardLayout from 'ui/layouts/DashboardLayout'
 import withAuthAndi18n from 'utils/withAuthAndi18n'
 
 export const getServerSideProps = withAuthAndi18n

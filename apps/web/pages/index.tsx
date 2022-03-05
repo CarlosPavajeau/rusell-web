@@ -1,8 +1,8 @@
 import { useUser } from '@auth0/nextjs-auth0'
 import { Box, Button, Link, Typography } from '@mui/material'
+import DashboardLayout from '@rusell/ui/layouts/DashboardLayout'
 import Head from 'next/head'
 import { FormattedMessage } from 'react-intl'
-import DashboardLayout from 'ui/layouts/DashboardLayout'
 import withAuthAndi18n from 'utils/withAuthAndi18n'
 
 const Web = () => {
