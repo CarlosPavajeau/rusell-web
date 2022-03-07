@@ -8,7 +8,7 @@
     "@auth0/nextjs-auth0": "^1.7.0",
     "@emotion/react": "^11.8.1",
     "@emotion/styled": "^11.8.1",
-    "@mui/icons-material": "^5.4.1",
+    "@mui/icons-material": "^5.4.4",
     "@mui/material": "^5.4.4",
     "@types/lodash": "^4.14.179",
     "@types/react": "^17.0.39",
