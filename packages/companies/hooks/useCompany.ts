@@ -12,7 +12,7 @@ const useCompany = (): [Company | undefined, LoadingCompany, CompanyError] => {
   const { company, setCompany } = useContext(CompanyContext)
 
   const { data, isValidating, error } = useSWR<Company | undefined>(
-    company ? `/api/companies/${company.id}` : null,
+    '/api/companies/',
     fetcher,
     {
       revalidateOnFocus: false,
