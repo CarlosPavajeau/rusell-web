@@ -3,18 +3,18 @@ import { createContext, ReactNode, useState } from 'react'
 import { Company } from '../models'
 
 type CompanyContext = {
-  company: Company | null
-  setCompany: (company: Company | null) => void
+  company?: Company | undefined
+  setCompany: (company: Company | undefined) => void
 }
 
 // eslint-disable-next-line no-redeclare
 const CompanyContext = createContext<CompanyContext>({
-  company: null,
+  company: undefined,
   setCompany: () => {},
 })
 
 export const CompanyProvider = ({ children }: { children: ReactNode }) => {
-  const [company, setCompany] = useState<Company | null>(null)
+  const [company, setCompany] = useState<Company | undefined>(undefined)
 
   return (
     <CompanyContext.Provider value={{ company, setCompany }}>

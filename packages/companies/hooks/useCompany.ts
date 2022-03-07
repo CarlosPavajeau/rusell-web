@@ -1,5 +1,6 @@
-import axios from 'axios'
-import { useContext, useEffect, useState } from 'react'
+import { fetcher } from '@rusell/core/http/fetcher'
+import { useContext, useEffect } from 'react'
+import useSWR from 'swr'
 
 import CompanyContext from '../context'
 import { Company } from '../models'
@@ -7,30 +8,22 @@ import { Company } from '../models'
 type LoadingCompany = boolean
 type CompanyError = boolean
 
-const useCompany = (): [Company | null, LoadingCompany, CompanyError] => {
+const useCompany = (): [Company | undefined, LoadingCompany, CompanyError] => {
   const { company, setCompany } = useContext(CompanyContext)
-  const [error, setError] = useState(false)
-  const [loading, setLoading] = useState(false)
+
+  const { data, isValidating, error } = useSWR<Company | undefined>(
+    company ? `/api/companies/${company.id}` : null,
+    fetcher,
+    {
+      revalidateOnFocus: false,
+    },
+  )
 
   useEffect(() => {
-    const fetchCompany = async () => {
-      if (company === null) {
-        setLoading(true)
-        try {
-          const { data } = await axios.get<Company>(`/api/companies`)
-          setCompany(data)
-        } catch (error) {
-          setError(true)
-        } finally {
-          setLoading(false)
-        }
-      }
-    }
+    setCompany(data)
+  }, [data, setCompany])
 
-    fetchCompany()
-  }, [company, setCompany])
-
-  return [company, loading, error]
+  return [company, isValidating, error]
 }
 
 export default useCompany
