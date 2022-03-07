@@ -1,4 +1,5 @@
 import { Modal, Text } from '@nextui-org/react'
+import useCompany from '@rusell/companies/hooks/useCompany'
 import { FC } from 'react'
 import { FormattedMessage } from 'react-intl'
 
@@ -20,7 +21,8 @@ const RouteSelectModal: FC<Props> = ({
   onSelect,
   onCancel,
 }) => {
-  const [routes, loading, error] = useRoutes()
+  const [company] = useCompany()
+  const [routes, loading, error] = useRoutes(company?.id)
 
   return (
     <Modal closeButton blur open={open} onClose={onCancel}>
