@@ -6,6 +6,7 @@ import { useFormContext } from 'react-hook-form'
 import { useIntl } from 'react-intl'
 
 import { CreateTransportSheetRequest } from '../../models'
+import SearchRouteButton from './search-route.button'
 
 const RouteField = () => {
   const intl = useIntl()
@@ -38,12 +39,15 @@ const RouteField = () => {
           defaultMessage: 'Route',
           description: 'Route field',
         })}
-        value={route ? `From: ${route.from}, to: (${route.to})` : ''}
+        value={route ? `From ${route.from}. To ${route.to}` : ''}
         helperText={routeIdError?.message}
         helperColor={'error'}
         status={routeIdError ? 'error' : 'default'}
         width="100%"
         contentRightStyling={false}
+        contentRight={
+          <SearchRouteButton onClick={() => setIsRouteSelectModalOpen(true)} />
+        }
       />
 
       <Input
