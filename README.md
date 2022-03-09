@@ -1,18 +1,21 @@
-# Turborepo starter
+# Rusell Web
 
-This is an official Yarn v1 starter turborepo.
+This project is a simple web application that allows the management of transport companies operations.
 
 ## What's inside?
 
-This turborepo uses [Yarn](https://classic.yarnpkg.com/lang/en/) as a package manager. It includes the following packages/apps:
+This project uses [Turborepo](https://www.turborepo.com/) to manage the project's source code.
+And uses [Yarn](https://classic.yarnpkg.com/lang/en/) as a package manager. It includes the following packages/apps:
 
 ### Apps and Packages
 
-- `docs`: a [Next.js](https://nextjs.org) app
-- `web`: another [Next.js](https://nextjs.org) app
-- `ui`: a stub React component library shared by both `web` and `docs` applications
+- `docs`: a [Next.js](https://nextjs.org) app that serves the documentation.
+- `web`: another [Next.js](https://nextjs.org) app that serves the web application.
+- `ui`: a stub React component library shared by the other apps.
 - `config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
 - `tsconfig`: `tsconfig.json`s used throughout the monorepo
+- `core`: the core library of the project
+- `addresses, bank-drafts, clients, companies, employees, parcels, routes, tickets, transport-sheets, vehicles`: the rest of the packages
 
 Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
 
@@ -33,7 +36,7 @@ This repository is used in the `npx create-turbo` command, and selected when cho
 To build all apps and packages, run the following command:
 
 ```
-cd my-turborepo
+cd rusell-web
 yarn run build
 ```
 
@@ -42,8 +45,14 @@ yarn run build
 To develop all apps and packages, run the following command:
 
 ```
-cd my-turborepo
+cd rusell-web
 yarn run dev
+```
+
+#### Develop Web
+```
+cd rusell-web
+yarn run dev:web
 ```
 
 ### Remote Caching
