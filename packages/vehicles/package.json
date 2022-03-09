@@ -6,7 +6,7 @@
   "dependencies": {
     "@emotion/react": "^11.8.1",
     "@emotion/styled": "^11.8.1",
-    "@mui/lab": "^5.0.0-alpha.71",
+    "@mui/lab": "^5.0.0-alpha.72",
     "@mui/material": "^5.5.0",
     "date-fns": "^2.28.0",
     "react-hook-form": "^7.27.1"
