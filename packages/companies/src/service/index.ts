@@ -1,4 +1,4 @@
-import { http } from '@rusell/core/http'
+import { http } from '@rusell/shared/http'
 
 import { Company, CreateCompanyRequest } from '../models'
 

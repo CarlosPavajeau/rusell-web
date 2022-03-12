@@ -1,6 +1,6 @@
+import DashboardLayout from '@layouts/dashboard'
 import { Container, Spacer, Text } from '@nextui-org/react'
 import { AddressForm } from '@rusell/addresses'
-import DashboardLayout from '@rusell/ui/layouts/DashboardLayout'
 import axios from 'axios'
 import NextHead from 'next/head'
 import { useRouter } from 'next/router'

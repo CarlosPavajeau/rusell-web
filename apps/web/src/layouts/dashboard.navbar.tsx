@@ -1,26 +1,12 @@
+import AccountAvatar from '@components/account-avatar'
+import ThemeToggle from '@components/theme-toggle'
+import { StyledNavContainer } from '@layouts/styles'
 import { Col, Container, Row, Spacer, Text } from '@nextui-org/react'
 import cn from 'classnames'
-import { FC, useEffect, useState } from 'react'
 
-import { useMediaQuery } from '../../../hooks/useMediaQuery'
-import ThemeToggle from '../../../theme/theme-toggle'
-import { StyledNavContainer } from '../../styles'
-import AccountPopover from './AccountPopover'
-
-const Navbar: FC = () => {
-  const [expanded, setExpanded] = useState(false)
-  const isMobile = useMediaQuery(960)
-
-  useEffect(() => {
-    if (!isMobile) {
-      setExpanded(false)
-    }
-  }, [isMobile])
-
-  const showBlur = !!expanded
-
+const DashboardNavbar = () => {
   return (
-    <StyledNavContainer showBlur={showBlur}>
+    <StyledNavContainer>
       <Container lg as="nav" display="flex" wrap="nowrap">
         <Col
           className="navbar__resources-container"
@@ -90,7 +76,7 @@ const Navbar: FC = () => {
 
               <Spacer x={1} y={0} />
 
-              <AccountPopover />
+              <AccountAvatar />
             </Row>
           </Row>
         </Col>
@@ -99,4 +85,4 @@ const Navbar: FC = () => {
   )
 }
 
-export default Navbar
+export default DashboardNavbar

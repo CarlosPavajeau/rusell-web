@@ -1,4 +1,4 @@
-import { http } from '@rusell/core/http'
+import { http } from '@rusell/shared/http'
 
 import { Client, CreateClientRequest } from '../models'
 

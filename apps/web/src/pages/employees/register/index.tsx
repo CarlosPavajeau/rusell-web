@@ -1,7 +1,7 @@
+import DashboardLayout from '@layouts/dashboard'
 import { Text } from '@nextui-org/react'
 import { useCompany } from '@rusell/companies'
 import { EmployeeForm } from '@rusell/employees'
-import DashboardLayout from '@rusell/ui/layouts/DashboardLayout'
 import axios from 'axios'
 import NextHead from 'next/head'
 import { useRouter } from 'next/router'

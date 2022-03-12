@@ -1,10 +1,10 @@
 import '@/styles/fonts.css'
 
 import { UserProvider } from '@auth0/nextjs-auth0'
+import DefaultLayout from '@layouts/default'
 import { NextUIProvider } from '@nextui-org/react'
 import { CompanyProvider } from '@rusell/companies'
-import DefaultLayout from '@rusell/ui/layouts/DefaultLayout'
-import { darkTheme, lightTheme } from '@rusell/ui/theme/shared'
+import { darkTheme, lightTheme } from '@theme/shared'
 import { NextComponentType, NextPage } from 'next'
 import type { AppProps } from 'next/app'
 import { useRouter } from 'next/router'

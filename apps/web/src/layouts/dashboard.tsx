@@ -1,20 +1,14 @@
+import Fixed from '@components/fixed'
+import DashboardNavbar from '@layouts/dashboard.navbar'
 import { Col, Container, Row } from '@nextui-org/react'
-import { FC, ReactNode } from 'react'
+import { FC, PropsWithChildren } from 'react'
 
-import Fixed from '../Fixed'
-import DashboardNavbar from './dashboard/navbar'
-import DashboardSidebar from './dashboard/sidebar'
-
-type Props = {
-  children: ReactNode
-}
-
-const DashboardLayout: FC<Props> = ({ children }) => {
+const DashboardLayout: FC<PropsWithChildren<{}>> = ({ children }) => {
   return (
     <>
       <DashboardNavbar />
       <Container
-        lg={true}
+        lg
         as="main"
         className="dashboard__container"
         display="flex"
@@ -47,7 +41,7 @@ const DashboardLayout: FC<Props> = ({ children }) => {
                 },
               }}
             >
-              <DashboardSidebar isOpen={false} onClose={() => {}} />
+              <div>Sidebar</div>
             </Fixed>
           </Col>
           <Col

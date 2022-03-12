@@ -1,4 +1,4 @@
-import { fetcher } from '@rusell/core/http/fetcher'
+import { fetcher } from '@rusell/shared/http/fetcher'
 import { useContext, useEffect } from 'react'
 import useSWR from 'swr'
 

@@ -19,13 +19,15 @@
     "@emotion/styled": "^11.8.1",
     "@mui/icons-material": "^5.5.0",
     "@mui/material": "^5.5.0",
+    "@nextui-org/react": "^1.0.2-beta.4",
+    "classnames": "^2.3.1",
     "next": "^12.1.0",
     "next-themes": "^0.1.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-iconly": "^2.2.5",
     "react-intl": "^5.24.6",
-    "swr": "^1.2.2",
-    "@rusell/ui": "*"
+    "swr": "^1.2.2"
   },
   "devDependencies": {
     "@formatjs/cli": "^4.8.2",

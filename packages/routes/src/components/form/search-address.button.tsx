@@ -1,4 +1,4 @@
-import InputSearchButton from '@rusell/ui/input-search.button'
+import InputSearchButton from '@rusell/shared/components/input-search.button'
 import { FC, MouseEventHandler } from 'react'
 
 type Props = {

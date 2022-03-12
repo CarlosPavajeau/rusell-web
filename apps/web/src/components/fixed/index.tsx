@@ -2,8 +2,7 @@ import { CSS } from '@nextui-org/react'
 import { styled } from '@stitches/react'
 import cn from 'classnames'
 import { FC, memo, PropsWithChildren } from 'react'
-
-import withDefaults from './utils/withDefaults'
+import withDefaults from 'utils/with-defaults'
 
 export interface FixedProps {
   offset?: number

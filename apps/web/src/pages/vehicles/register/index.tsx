@@ -1,6 +1,6 @@
+import DashboardLayout from '@layouts/dashboard'
 import { Spacer, Text } from '@nextui-org/react'
 import { useCompany } from '@rusell/companies'
-import DashboardLayout from '@rusell/ui/layouts/DashboardLayout'
 import { VehicleForm } from '@rusell/vehicles'
 import axios from 'axios'
 import NextHead from 'next/head'

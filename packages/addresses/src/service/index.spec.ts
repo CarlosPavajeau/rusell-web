@@ -2,7 +2,7 @@ import '@testing-library/jest-dom/extend-expect'
 import '@testing-library/jest-dom'
 
 import { faker } from '@faker-js/faker'
-import { http } from '@rusell/core/http'
+import { http } from '@rusell/shared/http'
 
 import { AddressesService } from './index'
 
