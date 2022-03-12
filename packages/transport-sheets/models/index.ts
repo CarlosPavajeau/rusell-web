@@ -6,6 +6,7 @@ export type CreateTransportSheetRequest = {
 }
 
 export type TransportSheet = {
+  id: string
   date: Date
   departureTime?: Date
   quota: number

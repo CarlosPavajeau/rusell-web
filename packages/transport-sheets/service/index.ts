@@ -19,4 +19,10 @@ export const TransportSheetsService = {
     )
     return data
   },
+  fetchCurrent: async (companyId: string) => {
+    const { data } = await http.get<TransportSheets>(
+      `/transport-sheets/companies/${companyId}/transport-sheets/current`,
+    )
+    return data
+  },
 }
