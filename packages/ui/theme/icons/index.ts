@@ -1,4 +1,5 @@
-import { CSS, styled } from '@nextui-org/react'
+import { CSS } from '@nextui-org/react'
+import { styled } from '@stitches/react'
 
 export type IconProps = {
   fill?: string

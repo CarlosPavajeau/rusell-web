@@ -1,4 +1,5 @@
-import { CSS, styled } from '@nextui-org/react'
+import { CSS } from '@nextui-org/react'
+import { styled } from '@stitches/react'
 import cn from 'classnames'
 import { FC, memo, PropsWithChildren } from 'react'
 

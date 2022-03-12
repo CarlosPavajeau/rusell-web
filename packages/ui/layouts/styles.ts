@@ -1,4 +1,4 @@
-import { styled } from '@nextui-org/react'
+import { styled } from '@stitches/react'
 
 export const StyledNavContainer = styled('nav', {
   top: 0,
