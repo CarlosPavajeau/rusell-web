@@ -15,11 +15,13 @@ module.exports = {
   },
   setupFilesAfterEnv: [
     '@testing-library/jest-dom',
-    '@testing-library/jest-dom/extend-expect',
+    '@testing-library/react',
+    '<rootDir>/jest.setup.js',
   ],
+  modulePaths: ['<rootDir>'],
   moduleDirectories: ['node_modules'],
   moduleFileExtensions: ['js', 'jsx', 'json', 'ts', 'tsx'],
   moduleNameMapper: {
-    '@src/(.*)': fromRoot('./$1'),
+    '@src/(.*)': fromRoot('apps/web/$1'),
   },
 }
