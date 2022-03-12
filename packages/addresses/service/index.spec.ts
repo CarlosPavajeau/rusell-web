@@ -1,6 +1,5 @@
 import '@testing-library/jest-dom/extend-expect'
 import '@testing-library/jest-dom'
-import '@babel/preset-typescript'
 
 import { faker } from '@faker-js/faker'
 import { http } from '@rusell/core/http'
