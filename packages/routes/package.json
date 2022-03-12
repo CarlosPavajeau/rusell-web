@@ -2,6 +2,9 @@
   "name": "@rusell/routes",
   "version": "1.0.0",
   "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
   "license": "MIT",
   "dependencies": {
     "@emotion/react": "^11.8.2",
