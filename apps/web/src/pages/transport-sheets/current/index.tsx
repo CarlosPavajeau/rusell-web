@@ -23,7 +23,9 @@ const CurrentTransportSheetPage = () => {
     }
   }, [companyError, router])
 
-  const { data: currentTransportSheet, isValidating } = useSWR<TransportSheet>(
+  const { data: currentTransportSheet, isValidating } = useSWR<
+    TransportSheet | undefined
+  >(
     company
       ? `/api/transport-sheets/companies/${company.id}/transport-sheets/current`
       : null,
@@ -48,8 +50,8 @@ const CurrentTransportSheetPage = () => {
 
       {(isValidating || loadingCompany) && <p>Loading...</p>}
 
-      <Text h5>{currentTransportSheet.id}</Text>
-      <Text h6>{currentTransportSheet.date}</Text>
+      <Text h5>{currentTransportSheet?.id}</Text>
+      <Text h6>{currentTransportSheet?.date}</Text>
     </>
   )
 }
