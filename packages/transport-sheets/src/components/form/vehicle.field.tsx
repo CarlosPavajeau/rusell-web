@@ -1,6 +1,7 @@
 import { Input } from '@nextui-org/react'
 import InputSearchButton from '@rusell/shared/components/input-search.button'
 import { Vehicle } from '@rusell/vehicles'
+import VehicleSelectModal from '@rusell/vehicles/src/components/select-modal'
 import { useState } from 'react'
 import { useFormContext } from 'react-hook-form'
 import { FormattedMessage, useIntl } from 'react-intl'
@@ -11,12 +12,25 @@ const VehicleField = () => {
   const intl = useIntl()
   const {
     register,
+    setValue,
+    watch,
     formState: {
       errors: { vehicleLicensePlate: vehicleLicensePlateError },
     },
   } = useFormContext<CreateTransportSheetRequest>()
 
-  const [vehicle] = useState<Vehicle | undefined>(undefined)
+  const [vehicle, setVehicle] = useState<Vehicle | undefined>(undefined)
+  const [isVehicleSelectModalOpen, setIsVehicleSelectModalOpen] =
+    useState(false)
+  const handleSelectVehicle = (vehicle: Vehicle) => {
+    setVehicle(vehicle)
+    setValue('vehicleLicensePlate', vehicle.licensePlate)
+    setValue('quota', vehicle.chairs)
+    setIsVehicleSelectModalOpen(false)
+  }
+  const handleCancelSelectVehicle = () => {
+    setIsVehicleSelectModalOpen(false)
+  }
 
   return (
     <>
@@ -37,7 +51,7 @@ const VehicleField = () => {
             tooltipContent={
               <FormattedMessage defaultMessage="Search a vehicle" />
             }
-            onClick={() => {}}
+            onClick={() => setIsVehicleSelectModalOpen(true)}
           />
         }
       />
@@ -53,6 +67,13 @@ const VehicleField = () => {
             }),
           },
         })}
+      />
+
+      <VehicleSelectModal
+        open={isVehicleSelectModalOpen}
+        selectedVehicleLicensePlate={watch('vehicleLicensePlate')}
+        onSelect={handleSelectVehicle}
+        onCancel={handleCancelSelectVehicle}
       />
     </>
   )
