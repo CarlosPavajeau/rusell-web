@@ -1,3 +1,4 @@
+import { withPageAuthRequired } from '@auth0/nextjs-auth0'
 import DashboardLayout from '@layouts/dashboard'
 import { Container, Grid, Spacer, Text } from '@nextui-org/react'
 import type { Address } from '@rusell/addresses'
@@ -6,9 +7,19 @@ import { fetcher } from '@rusell/shared/http/fetcher'
 import NextHead from 'next/head'
 import { FormattedMessage, useIntl } from 'react-intl'
 import useSWR from 'swr'
-import withAuthAndi18n from 'utils/withAuthAndi18n'
+import loadI18nMessages from 'utils/i18n/loadIntlMessages'
+import withLayout from 'utils/with-layout'
 
-export const getServerSideProps = withAuthAndi18n
+export const getStaticProps = async context => {
+  return {
+    props: {
+      intlMessages: await loadI18nMessages({
+        locale: context.locale,
+        defaultLocale: context.defaultLocale,
+      }),
+    },
+  }
+}
 
 const Addresses = () => {
   const intl = useIntl()
@@ -51,6 +62,4 @@ const Addresses = () => {
   )
 }
 
-Addresses.Layout = DashboardLayout
-
-export default Addresses
+export default withLayout(withPageAuthRequired(Addresses), DashboardLayout)

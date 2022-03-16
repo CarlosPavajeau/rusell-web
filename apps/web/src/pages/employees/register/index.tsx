@@ -1,3 +1,4 @@
+import { withPageAuthRequired } from '@auth0/nextjs-auth0'
 import DashboardLayout from '@layouts/dashboard'
 import { Text } from '@nextui-org/react'
 import { useCompany } from '@rusell/companies'
@@ -7,9 +8,19 @@ import NextHead from 'next/head'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 import { FormattedMessage, useIntl } from 'react-intl'
-import withAuthAndi18n from 'utils/withAuthAndi18n'
+import loadI18nMessages from 'utils/i18n/loadIntlMessages'
+import withLayout from 'utils/with-layout'
 
-export const getServerSideProps = withAuthAndi18n
+export const getStaticProps = async context => {
+  return {
+    props: {
+      intlMessages: await loadI18nMessages({
+        locale: context.locale,
+        defaultLocale: context.defaultLocale,
+      }),
+    },
+  }
+}
 
 const RegisterEmployee = () => {
   const [company, loadingCompany, companyError] = useCompany()
@@ -54,6 +65,7 @@ const RegisterEmployee = () => {
   )
 }
 
-RegisterEmployee.Layout = DashboardLayout
-
-export default RegisterEmployee
+export default withLayout(
+  withPageAuthRequired(RegisterEmployee),
+  DashboardLayout,
+)

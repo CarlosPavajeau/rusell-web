@@ -1,9 +1,21 @@
-import { useUser } from '@auth0/nextjs-auth0'
+import { useUser, withPageAuthRequired } from '@auth0/nextjs-auth0'
 import DashboardLayout from '@layouts/dashboard'
 import { Box, Button, Link, Typography } from '@mui/material'
 import Head from 'next/head'
 import { FormattedMessage } from 'react-intl'
-import withAuthAndi18n from 'utils/withAuthAndi18n'
+import loadI18nMessages from 'utils/i18n/loadIntlMessages'
+import withLayout from 'utils/with-layout'
+
+export const getStaticProps = async context => {
+  return {
+    props: {
+      intlMessages: await loadI18nMessages({
+        locale: context.locale,
+        defaultLocale: context.defaultLocale,
+      }),
+    },
+  }
+}
 
 const Web = () => {
   const { user, error, isLoading } = useUser()
@@ -54,8 +66,4 @@ const Web = () => {
   )
 }
 
-Web.Layout = DashboardLayout
-
-export const getServerSideProps = withAuthAndi18n
-
-export default Web
+export default withLayout(withPageAuthRequired(Web), DashboardLayout)

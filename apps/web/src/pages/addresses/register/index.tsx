@@ -1,3 +1,4 @@
+import { withPageAuthRequired } from '@auth0/nextjs-auth0'
 import DashboardLayout from '@layouts/dashboard'
 import { Container, Spacer, Text } from '@nextui-org/react'
 import { AddressForm } from '@rusell/addresses'
@@ -5,9 +6,19 @@ import axios from 'axios'
 import NextHead from 'next/head'
 import { useRouter } from 'next/router'
 import { FormattedMessage, useIntl } from 'react-intl'
-import withAuthAndi18n from 'utils/withAuthAndi18n'
+import loadI18nMessages from 'utils/i18n/loadIntlMessages'
+import withLayout from 'utils/with-layout'
 
-export const getServerSideProps = withAuthAndi18n
+export const getStaticProps = async context => {
+  return {
+    props: {
+      intlMessages: await loadI18nMessages({
+        locale: context.locale,
+        defaultLocale: context.defaultLocale,
+      }),
+    },
+  }
+}
 
 const RegisterAddress = () => {
   const router = useRouter()
@@ -40,6 +51,7 @@ const RegisterAddress = () => {
   )
 }
 
-RegisterAddress.Layout = DashboardLayout
-
-export default RegisterAddress
+export default withLayout(
+  withPageAuthRequired(RegisterAddress),
+  DashboardLayout,
+)
