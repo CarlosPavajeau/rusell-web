@@ -17,8 +17,8 @@
     "@auth0/nextjs-auth0": "^1.7.0",
     "@emotion/react": "^11.8.2",
     "@emotion/styled": "^11.8.1",
-    "@mui/icons-material": "^5.5.0",
-    "@mui/material": "^5.5.0",
+    "@mui/icons-material": "^5.5.1",
+    "@mui/material": "^5.5.1",
     "@nextui-org/react": "^1.0.2-beta.4",
     "classnames": "^2.3.1",
     "next": "^12.1.0",
@@ -26,7 +26,7 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-iconly": "^2.2.5",
-    "react-intl": "^5.24.6",
+    "react-intl": "^5.24.7",
     "swr": "^1.2.2"
   },
   "devDependencies": {
@@ -35,7 +35,7 @@
     "@types/react": "17.0.40",
     "babel-plugin-formatjs": "^10.3.18",
     "config": "*",
-    "eslint": "8.10.0",
+    "eslint": "8.11.0",
     "next-transpile-modules": "9.0.0",
     "tsconfig": "*",
     "typescript": "^4.6.2"
