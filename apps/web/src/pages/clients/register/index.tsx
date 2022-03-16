@@ -1,12 +1,24 @@
+import { withPageAuthRequired } from '@auth0/nextjs-auth0'
+import DefaultLayout from '@layouts/default'
 import { Container, Spacer, Text } from '@nextui-org/react'
 import { ClientForm } from '@rusell/clients'
 import axios from 'axios'
 import NextHead from 'next/head'
 import { useRouter } from 'next/router'
 import { FormattedMessage, useIntl } from 'react-intl'
-import withAuthAndi18n from 'utils/withAuthAndi18n'
+import loadI18nMessages from 'utils/i18n/loadIntlMessages'
+import withLayout from 'utils/with-layout'
 
-export const getServerSideProps = withAuthAndi18n
+export const getStaticProps = async context => {
+  return {
+    props: {
+      intlMessages: await loadI18nMessages({
+        locale: context.locale,
+        defaultLocale: context.defaultLocale,
+      }),
+    },
+  }
+}
 
 const RegisterClient = () => {
   const router = useRouter()
@@ -50,4 +62,4 @@ const RegisterClient = () => {
   )
 }
 
-export default RegisterClient
+export default withLayout(withPageAuthRequired(RegisterClient), DefaultLayout)
