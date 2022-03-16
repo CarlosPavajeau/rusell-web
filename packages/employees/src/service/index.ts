@@ -1,6 +1,11 @@
 import { http } from '@rusell/shared/http'
 
-import { CreateEmployeeRequest, Employees, EmployeeType } from '../models'
+import {
+  CreateEmployeeRequest,
+  Employee,
+  Employees,
+  EmployeeType,
+} from '../models'
 
 export const EmployeeService = {
   save: async (employee: CreateEmployeeRequest, companyId: string) => {
@@ -19,6 +24,10 @@ export const EmployeeService = {
     const { data } = await http.get<Employees>(
       `/employees/companies/${companyId}/employees/by-type/${type}`,
     )
+    return data
+  },
+  fetchCurrent: async () => {
+    const { data } = await http.get<Employee>(`/employees/current`)
     return data
   },
 }
