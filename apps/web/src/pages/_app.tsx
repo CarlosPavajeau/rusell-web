@@ -12,7 +12,9 @@ import { ThemeProvider as NextThemesProvider } from 'next-themes'
 import { IntlProvider } from 'react-intl'
 
 type NextPageWithLayout = NextPage & {
-  Layout?: NextComponentType
+  defaultProps?: {
+    Layout?: NextComponentType
+  }
 }
 
 type AppPropsWithLayout = AppProps & {
@@ -22,7 +24,7 @@ type AppPropsWithLayout = AppProps & {
 const App = ({ Component, pageProps }: AppPropsWithLayout) => {
   const { locale, defaultLocale } = useRouter()
 
-  const Layout = Component.Layout || DefaultLayout
+  const Layout = Component.defaultProps?.Layout || DefaultLayout
 
   return (
     <IntlProvider
