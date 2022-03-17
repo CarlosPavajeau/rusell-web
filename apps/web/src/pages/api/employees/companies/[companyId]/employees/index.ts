@@ -48,7 +48,6 @@ const handler = async (request: NextApiRequest, response: NextApiResponse) => {
   if (request.method === 'POST') {
     try {
       const { body } = request
-      await EmployeeService.save(body, companyId as string)
 
       const management = new ManagementClient({
         domain: process.env.AUTH0_DOMAIN,
@@ -60,7 +59,7 @@ const handler = async (request: NextApiRequest, response: NextApiResponse) => {
       const user = await management.createUser({
         connection: 'Username-Password-Authentication',
         email: body.email,
-        password: `${body.firstName.trim().toLowerCase()}${body.id}`,
+        password: `${body.firstName.trim().toUpperCase()}@${body.id}`,
         user_metadata: {
           companyId: companyId as string,
         },
@@ -80,11 +79,21 @@ const handler = async (request: NextApiRequest, response: NextApiResponse) => {
           response,
           user.user_id,
         )
-        if (assignDispatcherRole) {
-          response.status(201).end()
+        if (!assignDispatcherRole) {
+          response.status(500).json({
+            message: 'Failed to assign dispatcher role',
+          })
           return
         }
       }
+
+      await EmployeeService.save(
+        {
+          ...body,
+          userId: user.user_id,
+        },
+        companyId as string,
+      )
 
       response.status(201).end()
       return
