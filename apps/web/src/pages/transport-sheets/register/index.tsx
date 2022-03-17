@@ -2,11 +2,12 @@ import { withPageAuthRequired } from '@auth0/nextjs-auth0'
 import DashboardLayout from '@layouts/dashboard'
 import { Container, Spacer, Text } from '@nextui-org/react'
 import { useCompany } from '@rusell/companies'
+import { useCurrentEmployee } from '@rusell/employees'
 import { TransportSheetForm } from '@rusell/transport-sheets'
 import axios from 'axios'
 import NextHead from 'next/head'
 import { useRouter } from 'next/router'
-import { useEffect } from 'react'
+import { useEffect, useMemo } from 'react'
 import { FormattedMessage, useIntl } from 'react-intl'
 import loadI18nMessages from 'utils/i18n/loadIntlMessages'
 import withLayout from 'utils/with-layout'
@@ -24,6 +25,8 @@ export const getStaticProps = async context => {
 
 const RegisterTransportSheet = () => {
   const [company, loadingCompany, companyError] = useCompany()
+  const [dispatcher, loadingDispatcher, dispatcherError] = useCurrentEmployee()
+
   const router = useRouter()
   const intl = useIntl()
 
@@ -33,14 +36,24 @@ const RegisterTransportSheet = () => {
     }
   }, [companyError, router])
 
-  console.log('company', company)
+  useEffect(() => {
+    if (dispatcherError) {
+      router.push('/')
+    }
+  }, [dispatcherError, router])
+
+  const dispatcherId = useMemo(() => {
+    if (dispatcher) {
+      return dispatcher.id
+    }
+  }, [dispatcher])
 
   const handleSubmit = async values => {
     await axios.post(
       `/api/transport-sheets/companies/${company.id}/transport-sheets`,
       values,
     )
-    await router.push('/')
+    await router.push('/transport-sheets/current')
   }
 
   return (
@@ -51,7 +64,7 @@ const RegisterTransportSheet = () => {
         </title>
       </NextHead>
 
-      {loadingCompany && <div>Loading...</div>}
+      {(loadingCompany || loadingDispatcher) && <div>Loading...</div>}
 
       {company && (
         <Container sm>
@@ -61,7 +74,10 @@ const RegisterTransportSheet = () => {
 
           <Spacer y={1} />
 
-          <TransportSheetForm onSubmit={handleSubmit} />
+          <TransportSheetForm
+            onSubmit={handleSubmit}
+            dispatcherId={dispatcherId}
+          />
         </Container>
       )}
     </>
