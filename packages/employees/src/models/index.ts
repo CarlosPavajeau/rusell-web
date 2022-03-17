@@ -16,6 +16,7 @@ export type CreateEmployeeRequest = {
   email?: string
   phoneNumber: string
   type: EmployeeType
+  userId?: string
 }
 
 export type Employee = {
