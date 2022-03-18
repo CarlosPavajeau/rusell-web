@@ -1,7 +1,7 @@
 import { withPageAuthRequired } from '@auth0/nextjs-auth0'
 import DashboardLayout from '@layouts/dashboard'
 import { Spacer, Text } from '@nextui-org/react'
-import { useCompany } from '@rusell/companies'
+import { useCurrentEmployee } from '@rusell/employees'
 import { fetcher } from '@rusell/shared/http/fetcher'
 import { TransportSheet } from '@rusell/transport-sheets'
 import NextHead from 'next/head'
@@ -24,21 +24,21 @@ export const getStaticProps = async context => {
 }
 
 const CurrentTransportSheetPage = () => {
-  const [company, loadingCompany, companyError] = useCompany()
+  const [dispatcher, loadingDispatcher, dispatcherError] = useCurrentEmployee()
   const router = useRouter()
   const intl = useIntl()
 
   useEffect(() => {
-    if (companyError) {
-      router.push('/companies/register')
+    if (dispatcherError) {
+      router.push('/')
     }
-  }, [companyError, router])
+  }, [dispatcherError, router])
 
   const { data: currentTransportSheet, isValidating } = useSWR<
     TransportSheet | undefined
   >(
-    company
-      ? `/api/transport-sheets/companies/${company.id}/transport-sheets/current`
+    dispatcher
+      ? `/api/transport-sheets/companies/${dispatcher.companyId}/transport-sheets/current`
       : null,
     fetcher,
   )
@@ -59,10 +59,10 @@ const CurrentTransportSheetPage = () => {
 
       <Spacer y={1} />
 
-      {(isValidating || loadingCompany) && <p>Loading...</p>}
+      {(isValidating || loadingDispatcher) && <p>Loading...</p>}
 
       <Text h5>{currentTransportSheet?.id}</Text>
-      <Text h6>{currentTransportSheet?.date}</Text>
+      <Text h6>{intl.formatDate(currentTransportSheet?.date)}</Text>
     </>
   )
 }
