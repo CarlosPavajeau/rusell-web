@@ -25,6 +25,7 @@ export type Employee = {
   email?: string
   phoneNumber: string
   type: EmployeeType
+  companyId: string
 }
 
 export type Employees = Employee[]
