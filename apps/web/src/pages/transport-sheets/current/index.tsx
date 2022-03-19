@@ -53,7 +53,7 @@ const CurrentTransportSheetPage = () => {
         </title>
       </NextHead>
 
-      <Text h3>
+      <Text h2>
         <FormattedMessage defaultMessage="Transport sheet" />
       </Text>
 
