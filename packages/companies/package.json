@@ -11,7 +11,7 @@
     "@emotion/styled": "^11.8.1",
     "@mui/material": "^5.5.1",
     "axios": "^0.26.1",
-    "react-hook-form": "^7.28.0"
+    "react-hook-form": "^7.28.1"
   },
   "devDependencies": {
     "@types/react": "^17.0.40",
