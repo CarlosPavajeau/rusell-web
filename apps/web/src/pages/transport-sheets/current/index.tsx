@@ -3,7 +3,7 @@ import DashboardLayout from '@layouts/dashboard'
 import { Spacer, Text } from '@nextui-org/react'
 import { useCurrentEmployee } from '@rusell/employees'
 import { fetcher } from '@rusell/shared/http/fetcher'
-import { TransportSheet } from '@rusell/transport-sheets'
+import { TransportSheet, TransportSheetCard } from '@rusell/transport-sheets'
 import NextHead from 'next/head'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
@@ -53,7 +53,7 @@ const CurrentTransportSheetPage = () => {
         </title>
       </NextHead>
 
-      <Text h3>
+      <Text h2>
         <FormattedMessage defaultMessage="Transport sheet" />
       </Text>
 
@@ -61,8 +61,9 @@ const CurrentTransportSheetPage = () => {
 
       {(isValidating || loadingDispatcher) && <p>Loading...</p>}
 
-      <Text h5>{currentTransportSheet?.id}</Text>
-      <Text h6>{intl.formatDate(currentTransportSheet?.date)}</Text>
+      {currentTransportSheet && (
+        <TransportSheetCard transportSheet={currentTransportSheet} />
+      )}
     </>
   )
 }
