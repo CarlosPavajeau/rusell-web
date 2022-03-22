@@ -1,6 +1,6 @@
 export { default as VehicleForm } from './src/components/form'
 export { default as LegalInformationForm } from './src/components/legal-information/form'
-export { default as VehiclesTable } from './src/components/VehiclesTable'
+export { default as VehiclesTable } from './src/components/table'
 export type {
   CreateVehicleLegalInformationRequest,
   CreateVehicleRequest,

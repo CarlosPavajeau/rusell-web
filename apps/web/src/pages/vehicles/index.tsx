@@ -1,6 +1,6 @@
 import { withPageAuthRequired } from '@auth0/nextjs-auth0'
 import DashboardLayout from '@layouts/dashboard'
-import { Typography } from '@mui/material'
+import { Spacer, Text } from '@nextui-org/react'
 import { useCompany } from '@rusell/companies'
 import { fetcher } from '@rusell/shared/http/fetcher'
 import type { Vehicle } from '@rusell/vehicles'
@@ -33,16 +33,12 @@ const Vehicles = () => {
     if (companyError) {
       router.push('/companies/register')
     }
-  }, [companyError])
+  }, [router, companyError])
 
   const { data, isValidating } = useSWR<Vehicle[]>(
     company ? `/api/vehicles/companies/${company.id}/vehicles` : null,
     fetcher,
   )
-
-  if (loadingCompany || isValidating) {
-    return <div>Loading...</div>
-  }
 
   return (
     <>
@@ -54,9 +50,13 @@ const Vehicles = () => {
         </title>
       </NextHead>
 
-      <Typography variant="h3" align="center" sx={{ mb: 5 }}>
+      {(loadingCompany || isValidating) && <div>Loading...</div>}
+
+      <Text h3>
         <FormattedMessage defaultMessage="Vehicles" />
-      </Typography>
+      </Text>
+
+      <Spacer y={1} />
 
       {data && data.length > 0 ? (
         <VehiclesTable vehicles={data} />
