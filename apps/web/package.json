@@ -9,7 +9,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest --coverage",
+    "test": "jest",
     "i18n:extract": "formatjs extract 'src/pages/**/*.ts*' 'components/**/*.ts*' '../../packages/**/!(*.d).ts*' --out-file lang/en.json",
     "i18n:compile": "formatjs compile-folder lang compiled-lang"
   },

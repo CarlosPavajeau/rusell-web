@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "test": "jest --coverage"
+    "test": "jest"
   },
   "dependencies": {
     "@emotion/react": "^11.8.2",
