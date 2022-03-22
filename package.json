@@ -11,6 +11,7 @@
     "dev": "turbo run dev --parallel",
     "dev:web": "turbo run dev --scope=web --no-deps",
     "test": "turbo run test",
+    "test:coverage": "turbo run test -- --coverage",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "prepare": "husky install"
