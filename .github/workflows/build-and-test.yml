@@ -27,6 +27,6 @@ jobs:
       - name: install packages
         run: yarn install --frozen-lockfile
       - name: test
-        run: yarn test:coverages
+        run: yarn test:coverage
       - name: codecov
         uses: codecov/codecov-action@v1
