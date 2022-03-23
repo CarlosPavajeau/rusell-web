@@ -1,6 +1,6 @@
 import { withPageAuthRequired } from '@auth0/nextjs-auth0'
 import DashboardLayout from '@layouts/dashboard'
-import { Typography } from '@mui/material'
+import { Text } from '@nextui-org/react'
 import { useCompany } from '@rusell/companies'
 import type { Route } from '@rusell/routes'
 import { fetcher } from '@rusell/shared/http/fetcher'
@@ -49,9 +49,9 @@ const Routes = () => {
         </title>
       </NextHead>
 
-      <Typography variant="h3" align="center" sx={{ mb: 5 }}>
+      <Text h3>
         <FormattedMessage defaultMessage="Routes" />
-      </Typography>
+      </Text>
 
       {(loadingCompany || loadingRoutes) && <div>Loading...</div>}
 

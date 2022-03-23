@@ -1,6 +1,6 @@
 import { useUser, withPageAuthRequired } from '@auth0/nextjs-auth0'
 import DashboardLayout from '@layouts/dashboard'
-import { Box, Button, Link, Typography } from '@mui/material'
+import { Button, Link, Text } from '@nextui-org/react'
 import Head from 'next/head'
 import { FormattedMessage } from 'react-intl'
 import loadI18nMessages from 'utils/i18n/loadIntlMessages'
@@ -28,31 +28,25 @@ const Web = () => {
       <Head>
         <title>Rusell</title>
       </Head>
-      <Box sx={{ p: 4 }}>
+      <div>
         {user && (
           <>
-            <Typography variant="h5">
+            <Text h5>
               <strong>{user.name}</strong>
-            </Typography>
-            <Typography variant="caption">{user.email}</Typography>
+            </Text>
+            <Text small>{user.email}</Text>
           </>
         )}
 
-        <Box sx={{ my: 3 }}>
+        <div>
           {user === undefined && (
-            <Button variant="contained" color="primary">
-              <Link href="/api/auth/login" sx={{ textDecoration: 'none' }}>
-                Login
-              </Link>
+            <Button color="primary">
+              <Link href="/api/auth/login">Login</Link>
             </Button>
           )}
           {user !== undefined && (
-            <Button variant="outlined" color="error">
-              <Link
-                href="/api/auth/logout"
-                color="error"
-                sx={{ textDecoration: 'none' }}
-              >
+            <Button flat color="error">
+              <Link href="/api/auth/logout" color="error">
                 <FormattedMessage
                   defaultMessage="Logout"
                   description="Index: Logout"
@@ -60,8 +54,8 @@ const Web = () => {
               </Link>
             </Button>
           )}
-        </Box>
-      </Box>
+        </div>
+      </div>
     </>
   )
 }
