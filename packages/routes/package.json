@@ -7,9 +7,6 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@emotion/react": "^11.8.2",
-    "@emotion/styled": "^11.8.1",
-    "@mui/material": "^5.5.2",
     "react-hook-form": "^7.28.1"
   },
   "devDependencies": {

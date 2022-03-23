@@ -1,6 +1,6 @@
 import { withPageAuthRequired } from '@auth0/nextjs-auth0'
 import DashboardLayout from '@layouts/dashboard'
-import { Typography } from '@mui/material'
+import { Spacer, Text } from '@nextui-org/react'
 import { useCompany } from '@rusell/companies'
 import type { Employee } from '@rusell/employees'
 import { EmployeesTable } from '@rusell/employees'
@@ -40,10 +40,6 @@ const Employees = () => {
     fetcher,
   )
 
-  if (loadingCompany || isValidating) {
-    return <div>Loading...</div>
-  }
-
   return (
     <>
       <NextHead>
@@ -55,9 +51,13 @@ const Employees = () => {
         </title>
       </NextHead>
 
-      <Typography variant="h3" align="center" sx={{ mb: 5 }}>
+      <Text h3>
         <FormattedMessage defaultMessage="Employees" />
-      </Typography>
+      </Text>
+
+      <Spacer y={1} />
+
+      {(loadingCompany || isValidating) && <div>Loading...</div>}
 
       {data && data.length > 0 ? (
         <EmployeesTable employees={data} />
