@@ -1,12 +1,9 @@
 import { withPageAuthRequired } from '@auth0/nextjs-auth0'
 import DashboardLayout from '@layouts/dashboard'
 import { Container, Grid, Spacer, Text } from '@nextui-org/react'
-import type { Address } from '@rusell/addresses'
-import { AddressCard } from '@rusell/addresses'
-import { fetcher } from '@rusell/shared/http/fetcher'
+import { AddressCard, useAddresses } from '@rusell/addresses'
 import NextHead from 'next/head'
 import { FormattedMessage, useIntl } from 'react-intl'
-import useSWR from 'swr'
 import loadI18nMessages from 'utils/i18n/loadIntlMessages'
 import withLayout from 'utils/with-layout'
 
@@ -23,7 +20,7 @@ export const getStaticProps = async context => {
 
 const Addresses = () => {
   const intl = useIntl()
-  const { data, isValidating } = useSWR<Address[]>('/api/addresses', fetcher)
+  const [addresses, loading, error] = useAddresses()
 
   return (
     <>
@@ -42,11 +39,13 @@ const Addresses = () => {
 
         <Spacer y={1} />
 
-        {isValidating && <div>Loading...</div>}
+        {loading && <div>Loading...</div>}
 
-        {!isValidating && data && data.length > 0 ? (
+        {error && <div>Error: {error.message}</div>}
+
+        {!loading && addresses && addresses.length > 0 ? (
           <Grid.Container gap={2}>
-            {data.map(address => (
+            {addresses.map(address => (
               <Grid xs={12} md={6} key={address.id}>
                 <AddressCard address={address} />
               </Grid>
