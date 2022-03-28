@@ -33,7 +33,7 @@
     "@types/node": "^17.0.23",
     "@types/react": "17.0.43",
     "axios": "^0.26.1",
-    "babel-plugin-formatjs": "^10.3.18",
+    "babel-plugin-formatjs": "^10.3.19",
     "config": "*",
     "eslint": "8.11.0",
     "next-transpile-modules": "9.0.0",
