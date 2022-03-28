@@ -435,13 +435,13 @@
   resolved "https://registry.yarnpkg.com/@faker-js/faker/-/faker-6.0.0.tgz#b613ebf5f5ebb2ab987afb567d8b7fe860199c13"
   integrity sha512-10zLCKhp3YEmBuko71ivcMoIZcCLXgQVck6aNswX+AWwaek/L8S3yz9i8m3tHigRkcF6F2vI+qtdtyySHK+bGA==
 
-"@formatjs/cli@^4.8.2":
-  version "4.8.2"
-  resolved "https://registry.yarnpkg.com/@formatjs/cli/-/cli-4.8.2.tgz#65b08c01d0ee0099d56c419ecd49c0bf2f947f56"
-  integrity sha512-nYG9e2tH3xxLbdvlq1KHUdgjfLICa16wY5fD82JTUyiixJ0tDIlMjT3BbEHwKSCYyIxcVme5ODcduZ4gRM+b5w==
+"@formatjs/cli@^4.8.3":
+  version "4.8.3"
+  resolved "https://registry.yarnpkg.com/@formatjs/cli/-/cli-4.8.3.tgz#8984be6f1d333857d692f747cb8b16c663c1b354"
+  integrity sha512-YmOTqKjmB4M/KJsE+e2k8IyViWwSrZwoW/lv2gLNGwucr+hc0+dWpP4oZzl07WSoVWW7NrbdvF8CEBopbfnmLQ==
   dependencies:
-    "@formatjs/icu-messageformat-parser" "2.0.18"
-    "@formatjs/ts-transformer" "3.9.2"
+    "@formatjs/icu-messageformat-parser" "2.0.19"
+    "@formatjs/ts-transformer" "3.9.3"
     "@types/estree" "^0.0.50"
     "@types/fs-extra" "^9.0.1"
     "@types/json-stable-stringify" "^1.0.32"
@@ -565,6 +565,17 @@
   integrity sha512-Iff+ca1ue3IOb/PDNANR6++EArwlyMpW+t6AL4MG5sordpgflsIh8BMz6nGs+/tUOjP0xioNAu/acYiQ+rW5Bw==
   dependencies:
     "@formatjs/icu-messageformat-parser" "2.0.18"
+    "@types/node" "14 || 16 || 17"
+    chalk "^4.0.0"
+    tslib "^2.1.0"
+    typescript "^4.5"
+
+"@formatjs/ts-transformer@3.9.3":
+  version "3.9.3"
+  resolved "https://registry.yarnpkg.com/@formatjs/ts-transformer/-/ts-transformer-3.9.3.tgz#714a7ec9daff38fdedd3bdd990e21d382cd793c8"
+  integrity sha512-TCxBcCaX+trBD964epl0jS0geugN1qw/7ZTRPmvJdu6JYK3WeVMK081CVWpI9yoXuuTa22Ec4UGyG/wp3dC5Cw==
+  dependencies:
+    "@formatjs/icu-messageformat-parser" "2.0.19"
     "@types/node" "14 || 16 || 17"
     chalk "^4.0.0"
     tslib "^2.1.0"

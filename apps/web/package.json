@@ -27,7 +27,7 @@
     "swr": "^1.2.2"
   },
   "devDependencies": {
-    "@formatjs/cli": "^4.8.2",
+    "@formatjs/cli": "^4.8.3",
     "@types/auth0": "^2.34.15",
     "@types/axios": "^0.14.0",
     "@types/node": "^17.0.23",
