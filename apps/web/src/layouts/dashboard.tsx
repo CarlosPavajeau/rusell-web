@@ -5,7 +5,7 @@ import { FC, PropsWithChildren } from 'react'
 
 const DashboardLayout: FC<PropsWithChildren<{}>> = ({ children }) => {
   return (
-    <>
+    <div id="app-container">
       <DashboardNavbar />
       <Container
         lg
@@ -38,14 +38,10 @@ const DashboardLayout: FC<PropsWithChildren<{}>> = ({ children }) => {
               css={{
                 maxHeight: 'calc(100vh - 4rem)',
                 overflow: 'auto',
-                display: 'none',
                 zIndex: '$2',
                 pb: '$28',
                 '&::-webkit-scrollbar': {
                   width: '0px',
-                },
-                '@md': {
-                  display: 'block',
                 },
               }}
             >
@@ -57,7 +53,6 @@ const DashboardLayout: FC<PropsWithChildren<{}>> = ({ children }) => {
             css={{
               zIndex: '$10',
               maxWidth: '100%',
-              overflow: 'auto',
               '@xsMax': {
                 p: 0,
               },
@@ -67,7 +62,7 @@ const DashboardLayout: FC<PropsWithChildren<{}>> = ({ children }) => {
           </Col>
         </Row>
       </Container>
-    </>
+    </div>
   )
 }
 
