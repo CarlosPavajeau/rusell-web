@@ -23,7 +23,15 @@ const DashboardLayout: FC<PropsWithChildren<{}>> = ({ children }) => {
             },
           }}
         >
-          <Col css={{ width: '32%' }}>
+          <Col
+            css={{
+              width: '32%',
+              display: 'none',
+              '@md': {
+                display: 'block',
+              },
+            }}
+          >
             <Fixed
               offset={92}
               className="docs__left-sidebar"
@@ -48,6 +56,8 @@ const DashboardLayout: FC<PropsWithChildren<{}>> = ({ children }) => {
             className="dashboard__center"
             css={{
               zIndex: '$10',
+              maxWidth: '100%',
+              overflow: 'auto',
               '@xsMax': {
                 p: 0,
               },

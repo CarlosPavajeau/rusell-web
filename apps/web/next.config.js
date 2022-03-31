@@ -18,6 +18,9 @@ const withTM = require('next-transpile-modules')([
  **/
 module.exports = withTM({
   reactStrictMode: true,
+  typescript: {
+    ignoreBuildErrors: true,
+  },
   i18n: {
     locales: ['en', 'es'],
     defaultLocale: 'en',

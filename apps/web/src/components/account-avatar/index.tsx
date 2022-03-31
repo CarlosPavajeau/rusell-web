@@ -8,7 +8,7 @@ const AccountAvatar = () => {
 
   return (
     <Avatar
-      size="lg"
+      size="sm"
       alt={user?.name || 'User Avatar'}
       src={user?.picture || ''}
       pointer

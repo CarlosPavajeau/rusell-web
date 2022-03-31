@@ -1,5 +1,4 @@
-import { CSS, useTheme } from '@nextui-org/react'
-import { styled } from '@stitches/react'
+import { CSS, styled, useTheme } from '@nextui-org/react'
 import { Moon, Sun } from '@theme/icons'
 import cn from 'classnames'
 import { useTheme as useNextTheme } from 'next-themes'
