@@ -1,9 +1,13 @@
 import Fixed from '@components/fixed'
+import Sidebar from '@components/sidebar'
 import DashboardNavbar from '@layouts/dashboard.navbar'
-import { Col, Container, Row } from '@nextui-org/react'
+import { Col, Container, Loading, Row, Text } from '@nextui-org/react'
+import useSidebarSettings from '@rusell/shared/settings/use-sidebar-settings'
 import { FC, PropsWithChildren } from 'react'
 
 const DashboardLayout: FC<PropsWithChildren<{}>> = ({ children }) => {
+  const [settings, isLoadingSettings, settingsError] = useSidebarSettings()
+
   return (
     <div id="app-container">
       <DashboardNavbar />
@@ -45,7 +49,11 @@ const DashboardLayout: FC<PropsWithChildren<{}>> = ({ children }) => {
                 },
               }}
             >
-              <div>Sidebar</div>
+              <>
+                {isLoadingSettings && <Loading />}
+                {settingsError && <Text>{settingsError}</Text>}
+                {settings && <Sidebar routes={settings} />}
+              </>
             </Fixed>
           </Col>
           <Col
