@@ -51,7 +51,7 @@ const DashboardLayout: FC<PropsWithChildren<{}>> = ({ children }) => {
             >
               <>
                 {isLoadingSettings && <Loading />}
-                {settingsError && <Text>{settingsError}</Text>}
+                {settingsError && <Text>{settingsError.message}</Text>}
                 {settings && <Sidebar routes={settings} />}
               </>
             </Fixed>
