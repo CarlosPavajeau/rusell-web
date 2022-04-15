@@ -1404,10 +1404,10 @@
   resolved "https://registry.yarnpkg.com/@types/aria-query/-/aria-query-4.2.2.tgz#ed4e0ad92306a704f9fb132a0cfcf77486dbe2bc"
   integrity sha512-HnYpAE1Y6kRyKM/XkEuiRQhTHvkzMBurTHnpFLYLBGPIylZNPs9jJcuOOYWxPLJCSEtmZT0Y8rHDokKN7rRTig==
 
-"@types/auth0@^2.34.18":
-  version "2.34.18"
-  resolved "https://registry.yarnpkg.com/@types/auth0/-/auth0-2.34.18.tgz#b86fbe4620aeba3caee7a9167c0ee9755b2b2dc0"
-  integrity sha512-FfhxCLSja2l5Co3Snmw52ySiZfLvkZa4VlScEAWyFvmmePgD1+I7+1N092iumiKexkq5/ev6IKxBqw+jSVRfaQ==
+"@types/auth0@^2.34.19":
+  version "2.34.19"
+  resolved "https://registry.yarnpkg.com/@types/auth0/-/auth0-2.34.19.tgz#bddaee835de72288b7da7317406dd9cb6cc0d801"
+  integrity sha512-R2wOddVFNi4m1eq3V+Hg50n+C7Z7/GxM+bwPAohwFWOixm27dtTc3r0rXduWnjWaozqsKK3vkIQtR3jWpxJVNw==
 
 "@types/axios@^0.14.0":
   version "0.14.0"
