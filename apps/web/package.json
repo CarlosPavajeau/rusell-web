@@ -30,7 +30,7 @@
     "@formatjs/cli": "^4.8.3",
     "@types/auth0": "^2.34.19",
     "@types/axios": "^0.14.0",
-    "@types/node": "^17.0.24",
+    "@types/node": "^17.0.25",
     "@types/react": "18.0.5",
     "axios": "^0.26.1",
     "babel-plugin-formatjs": "^10.3.19",
