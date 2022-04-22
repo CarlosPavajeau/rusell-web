@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "@types/node": "^17.0.25",
-    "@types/react": "18.0.5",
+    "@types/react": "18.0.6",
     "config": "*",
     "eslint": "8.13.0",
     "next-transpile-modules": "9.0.0",
