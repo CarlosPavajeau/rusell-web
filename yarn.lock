@@ -3438,13 +3438,13 @@ eslint-plugin-es@^3.0.0:
     eslint-utils "^2.0.0"
     regexpp "^3.0.0"
 
-eslint-plugin-formatjs@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-formatjs/-/eslint-plugin-formatjs-3.1.0.tgz#e84bdaa13cf95ee4a9d88d7793c319e76dfa1b6f"
-  integrity sha512-LHG8FliHXR23waIjlKnCMCls6td3W3n3yTiOY7c0UERRQVD70rYNXU1MozaBZ/eBDyE3L7Ao0h5C9PAr+efY+Q==
+eslint-plugin-formatjs@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-formatjs/-/eslint-plugin-formatjs-3.1.1.tgz#bbe2ef11f377628861f4aecc43dacc67abf8f3f6"
+  integrity sha512-sFfa736BZWTFQsSJmwBdDF70uxShL8olcv9RMLnX7cvKEewnR8+OCStxcmnAgTFUiaG9Hts6615YgcgvYoIN8w==
   dependencies:
-    "@formatjs/icu-messageformat-parser" "2.0.19"
-    "@formatjs/ts-transformer" "3.9.3"
+    "@formatjs/icu-messageformat-parser" "2.1.0"
+    "@formatjs/ts-transformer" "3.9.4"
     "@types/eslint" "7 || 8"
     "@typescript-eslint/typescript-estree" "^5.9.1"
     emoji-regex "^10.0.0"
