@@ -22,7 +22,7 @@
     "@testing-library/react": "^13.1.1",
     "@testing-library/react-hooks": "^8.0.0",
     "@testing-library/user-event": "^14.1.1",
-    "@types/jest": "^27.4.1",
+    "@types/jest": "^27.5.0",
     "esbuild": "^0.14.38",
     "esbuild-jest": "^0.5.0",
     "husky": "^7.0.4",
