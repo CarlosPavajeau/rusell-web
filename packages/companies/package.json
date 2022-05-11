@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "axios": "^0.27.2",
-    "react-hook-form": "^7.30.0"
+    "react-hook-form": "^7.31.1"
   },
   "devDependencies": {
     "@types/react": "^18.0.9",
