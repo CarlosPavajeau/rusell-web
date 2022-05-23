@@ -510,10 +510,10 @@
   dependencies:
     tslib "2.4.0"
 
-"@formatjs/intl@2.2.3":
-  version "2.2.3"
-  resolved "https://registry.yarnpkg.com/@formatjs/intl/-/intl-2.2.3.tgz#f226cb4529092eb1e03b17ad6614bc550a0b88dc"
-  integrity sha512-FZ1BlI5KA2VPCuxzLEXJX3hENYWEv7aOynro8uYpKAnYuQT0BhnLoZVtTPyrUZ5VGUbUJ5hRa8oOf4iyGyLC8Q==
+"@formatjs/intl@2.2.4":
+  version "2.2.4"
+  resolved "https://registry.yarnpkg.com/@formatjs/intl/-/intl-2.2.4.tgz#27c71b1c9ffc7b2632956dc49faf8e0da3871486"
+  integrity sha512-cQpEdxP4WtQsb8kc8h2+21fnkb7tcQMBAMpnUzK8lFUNOXQtu65pUVe0f7Nh7uvJoVbtMiigTGoj+J4dZjUOuQ==
   dependencies:
     "@formatjs/ecma402-abstract" "1.11.6"
     "@formatjs/fast-memoize" "1.2.3"
@@ -6054,14 +6054,14 @@ react-iconly@^2.2.5:
   resolved "https://registry.yarnpkg.com/react-iconly/-/react-iconly-2.2.5.tgz#32b9a1d66815ae6a421026694e7d16027248d87f"
   integrity sha512-c9WO/2TJltmyCVGj+/mdJZFoldfzYA8uUPmcml03D6YlBVWsCN5gq5Vb2k95qmeg+vSqMRvC69yghZvM0T4lKQ==
 
-react-intl@^6.0.1:
-  version "6.0.1"
-  resolved "https://registry.yarnpkg.com/react-intl/-/react-intl-6.0.1.tgz#99cec43a9be3acfbdf785387544a510399bcd721"
-  integrity sha512-vi/Ef15nAnj5Xs2X6egzKT6kRCaNcYPhRxI0IWl+zreQA9oQ2cVU8WQvBlVK+RM5c+wbKcuqCK4S/allIQtSzQ==
+react-intl@^6.0.2:
+  version "6.0.2"
+  resolved "https://registry.yarnpkg.com/react-intl/-/react-intl-6.0.2.tgz#0e8df2aec2eea3e4fd672f68fa97abc82459e721"
+  integrity sha512-SrVlPUYITOQA9s+yhePh2MtLwbJh1MRhO69PK+eOPX8N+0kF78h0kaiJaIF3ZEJCawAxrL5927qI22VCap0INw==
   dependencies:
     "@formatjs/ecma402-abstract" "1.11.6"
     "@formatjs/icu-messageformat-parser" "2.1.2"
-    "@formatjs/intl" "2.2.3"
+    "@formatjs/intl" "2.2.4"
     "@formatjs/intl-displaynames" "6.0.1"
     "@formatjs/intl-listformat" "7.0.1"
     "@types/hoist-non-react-statics" "^3.3.1"
