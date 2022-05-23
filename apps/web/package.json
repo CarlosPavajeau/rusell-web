@@ -14,7 +14,7 @@
     "i18n:compile": "formatjs compile-folder lang compiled-lang"
   },
   "dependencies": {
-    "@auth0/nextjs-auth0": "^1.8.0",
+    "@auth0/nextjs-auth0": "^1.9.0",
     "@nextui-org/react": "^1.0.2-beta.5",
     "auth0": "^2.41.0",
     "classnames": "^2.3.1",
