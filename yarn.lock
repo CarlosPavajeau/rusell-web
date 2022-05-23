@@ -2139,10 +2139,10 @@ atob@^2.1.2:
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
   integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
 
-auth0@^2.41.0:
-  version "2.41.0"
-  resolved "https://registry.yarnpkg.com/auth0/-/auth0-2.41.0.tgz#ed847f43b6ff31819844bcb400a219cd2d9ddd9b"
-  integrity sha512-ycsZfpy+6j36aqybQjDK0RHfZ+LiyloemoYfdUNG0JuouvucNkJiVcZhozHIzuc6+Fk5WW8rJk9MYzZ0DandvQ==
+auth0@^2.42.0:
+  version "2.42.0"
+  resolved "https://registry.yarnpkg.com/auth0/-/auth0-2.42.0.tgz#8202f94ce438b7b3081a29ce7325e08662a9268d"
+  integrity sha512-IiA224CoqjPF9Pnx0R80wQZBGlXMia69s7lQHg328Oe2mngdp6Qi32DaIKkkVtJb8FuMleWMgI+zmbwW0znhYw==
   dependencies:
     axios "^0.26.1"
     form-data "^3.0.1"
